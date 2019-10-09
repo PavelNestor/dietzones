@@ -1,0 +1,53 @@
+include mixins
+
+-
+  var cards = [
+    {
+      path: '/img/block-main/card-img1',
+      alt: 'What Breaks a Fast? Foods, Drinks, and Supplements',
+      title: 'What Breaks a Fast? Foods, Drinks, and Supplements',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
+    {
+      path: '/img/block-main/card-img2',
+      alt: '10 Science-Based Benefits of Fennel and Fennel Seeds',
+      title: '10 Science-Based Benefits of Fennel and Fennel Seeds',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
+    {
+      path: '/img/block-main/card-img3',
+      alt: 'Bookmark This List of Low-Carb Foods For Your Next Trip to the Grocery Store',
+      title: 'Bookmark This List of Low-Carb Foods For Your Next Trip to the Grocery Store',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
+    {
+      path: '/img/block-main/card-img4',
+      alt: 'What Breaks a Fast? Foods, Drinks, and Supplements',
+      title: 'What Breaks a Fast? Foods, Drinks, and Supplements',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
+  ];
+
+section.container.main
+  h1.title_news DietZones.com
+
+  .slider-wrapper
+    ul#main-slider.slider(data-target="carousel")
+      each card in cards
+        +card-main(card)
+
+    .slider__button-wrapper
+      button(data-action='slideLeft') L
+      button(data-action='slideRight') R

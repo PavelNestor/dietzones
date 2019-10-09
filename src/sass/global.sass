@@ -2,7 +2,7 @@
   box-sizing: border-box
 
 html
-  color: $color
+  color: $color_main
   font-size: 8px
   font-family: Montserrat
 
@@ -31,7 +31,7 @@ section
 a
   border: none
   outline: none
-  // color: $main-color
+  color: $color_main
   text-decoration: none
 
 p
@@ -80,7 +80,7 @@ h6
 hr
   border: 0
   display: block
-  border-top: 1px solid $base-font-color
+  border-top: 1px solid $color_main
   height: 1px
   margin-top: 1rem
   margin-bottom: 1rem
@@ -95,13 +95,13 @@ button, input, select, textarea, a
 
   &:focus,
   &:active
-    outline-color: $main-color
+    outline-color: $color_main
 
 //	SELECT
 select
   appearance: none
-  border: 1px solid $base-font-color
-  outline-color: $main-color
+  border: 1px solid $color_main
+  outline-color: $color_main
 
   &:-moz-focusring
     color: transparent
@@ -111,9 +111,9 @@ select
 // INPUTS & TEXTAREA
 input,
 textarea
-  outline-color: $main-color
+  outline-color: $color_main
   font: $font
-  color: $base-font-color
+  color: $color_main
   font-size: 1rem
 
   &::placeholder
@@ -132,15 +132,15 @@ input[type='number']
 
 
 // GRID
-.container
-  overflow: hidden
-  margin: 0 auto
-  width: 80%
+// .container
+//   overflow: hidden
+//   margin: 0 auto
+//   width: 80%
 
-  @media #{$media-sm}
-    padding-left: 1rem
-    padding-right: 1rem
-    width: 100%
+//   @media #{$media-sm}
+//     padding-left: 1rem
+//     padding-right: 1rem
+//     width: 100%
 
 .hidden
   display: none !important
@@ -164,7 +164,7 @@ input[type='number']
     object-fit: cover
     vertical-align: middle
     height: 100%
-    width: 100%
+    width: auto
 
   .fake-img
     opacity: 0
@@ -234,9 +234,97 @@ input[type='number']
     margin-bottom: 1.2rem
     margin-left: -0.1rem
     padding-left: 3.2rem
-    color: $color_primary
+    color: $color_main
 
     @media #{$media-sm-plus-up}
       margin-left: 0.5rem
       margin-bottom: 1.1rem
 
+.container
+  margin-left: 7.6vw
+
+.slider
+  margin: 0
+  padding: 0
+  list-style: none
+  width: 100%
+  display: flex
+  position: absolute
+  left: 0
+  transition: all 1s ease
+
+  &__button-wrapper
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    position: absolute
+    padding-right: 7.6vw
+
+
+  &-wrapper
+    height: 48rem
+    width: calc(100vw - 7.6vw)
+    position: relative
+    overflow: hidden
+    margin: 0 auto
+
+.title
+  &_news
+    font-family: $font-family_accent, sans-serif
+    font-size: 2rem
+    line-height: 1em
+
+.card-main
+  min-width: 36rem
+  height: 36rem
+  margin-right: 1rem
+  display: inline-block
+
+  &__img
+    height: 36rem
+    margin-bottom: 1.5rem
+
+  &__title
+    font-family: $font-family_accent, sans-serif
+    font-size: 2rem
+    line-height: 1em
+    margin-bottom: 2rem
+
+  &__subtitle
+    font-weight: bold
+    font-size: 1.2rem
+    line-height: 1.3em
+    color: $color_accent
+    margin-bottom: .6rem
+
+.card-footer
+  display: flex
+
+  &__date
+    margin-right: 2rem
+
+  &__text
+    font-family: $font-family_roboto, sans-serif
+    font-size: 1.2rem
+    line-height: 1.1em
+    margin: 0
+
+  &__looks
+    display: flex
+    margin-right: 2rem
+
+    &-img
+      width: 2rem
+      height: 1.5rem
+      margin-right: 1rem
+
+  &__comments
+    display: flex
+    margin-right: 2rem
+
+    &-img
+      width: 1.5rem
+      height: 1.5rem
+      margin-right: 1rem

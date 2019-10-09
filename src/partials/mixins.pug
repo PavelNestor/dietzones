@@ -1,0 +1,31 @@
+mixin pictureJpg(path, alt='')
+  picture.cover(class!=attributes.class)
+    source.cover(srcset=`${path}.webp` type="image/webp" alt= alt)
+    source.cover(srcset=`${path}.jpg` type="image/jpeg" alt= alt)
+    img.cover(srcset=`${path}.jpg` alt= alt)
+
+mixin picturePng(path, alt='')
+  picture.cover(class!=attributes.class)
+    source.cover(srcset=`${path}.webp` type="image/webp" alt= alt class!=attributes.class)
+    source.cover(srcset=`${path}.png` type="image/jpeg" alt= alt class!=attributes.class)
+    img.cover(srcset=`${path}.png` alt= alt class!=attributes.class)
+
+mixin card-main(card)
+  li.card-main(data-target="card")
+    .card-main__img
+      //- .image-holder
+      +pictureJpg(card.path, card.alt)
+    .card-main__title= card.title
+    .card-main__subtitle= card.subtitle
+    +card-footer(card.date, card.looks, card.comments)
+
+mixin card-footer(date, looks, comments)
+  .card-footer
+    .card-footer__date
+      p.card-footer__text= date
+    .card-footer__looks
+      img.card-footer__looks-img(src="/img/icons/looks.svg", alt="looks")
+      p.card-footer__text= looks
+    .card-footer__comments
+      img.card-footer__comments-img(src="/img/icons/comments.svg", alt="comments")
+      p.card-footer__text= comments
