@@ -29,3 +29,13 @@ mixin card-footer(date, looks, comments)
     .card-footer__comments
       img.card-footer__comments-img(src="/img/icons/comments.svg", alt="comments")
       p.card-footer__text= comments
+
+mixin slider-btn-prev()
+  .slider-btn__wrap.slider-btn__wrap_prev(data-action='slideLeft')
+    .slider-btn
+      img.slider-btn__img(src="/img/icons/arrow-prev.svg", alt='slide left')
+
+mixin slider-btn-next()
+  .slider-btn__wrap.slider-btn__wrap_next(data-action='slideRight')
+    .slider-btn
+      img.slider-btn__img(src="/img/icons/arrow-next.svg", alt='slide left')
