@@ -1,1 +1,11 @@
-nav.navbar
+nav#navbar.navbar
+  .navbar__left
+    img.navbar__burger(src="/img/icons/burger.svg", alt="Open menu")
+    img(src="/img/big-logo.svg", alt="DietZones.com logo")
+
+  include menu
+
+  .navbar__btn-wrap
+    img.navbar__search(src="/img/icons/search.svg", alt="search")
+    a.main-btn.main-btn_accent-outline.navbar__btn-signup(href="#") Sign up
+    a.main-btn.main-btn_black.navbar__btn-signin(href="#") Sign in

@@ -1,1 +1,54 @@
 .navbar
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 2.4rem 2rem
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  transition: transform 0.3s
+  background: $color_white
+  z-index: 1
+  transform: translateX(-120%)
+
+  @media #{$media-sm-plus-up}
+    padding: 1.7rem 5rem 1.7rem 3rem
+
+  &_active
+    transform: translateX(0)
+
+  &__burger
+    margin-right: 4rem
+    height: 1.4rem
+
+    @media #{$media-sm-plus-up}
+      margin-right: 2.5rem
+
+  &__search
+    margin-right: 0
+
+    @media #{$media-sm-plus-up}
+      margin-right: 1rem
+
+  &__left
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+  &__btn-signin
+    display: none
+
+    @media #{$media-md-up}
+      display: block
+  &__btn-signup
+    display: none
+
+    @media #{$media-md-up}
+      margin-right: 1rem
+      display: block
+
+  &__btn-wrap
+    display: flex
+    align-items: center
+    justify-content: space-between

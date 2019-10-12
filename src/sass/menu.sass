@@ -1,0 +1,33 @@
+.menu
+  display: none
+
+  @media #{$media-sm-plus-up}
+    display: flex
+    list-style-type: none
+    margin: 0
+    padding: 0
+
+
+  &__item
+    display: inline
+
+  &__link
+    text-transform: uppercase
+    font-weight: bold
+    font-size: 1.2rem
+    line-height: 1.3em
+    margin-right: 2rem
+    position: relative
+
+    &:nth-last-child
+      margin-right: 0
+
+    &_active
+      &:after
+        content: ''
+        position: absolute
+        bottom: -1rem
+        left: -0.5rem
+        right: -0.5rem
+        height: 1rem
+        background: url('/img/icons/btn-active.svg') center bottom no-repeat

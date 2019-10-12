@@ -1,0 +1,49 @@
+.main
+
+  &__content
+
+  &__logo
+    height: 2rem
+
+    @media #{$media-sm-plus-up}
+      height: 3rem
+
+    &-wrap
+      position: relative
+      margin: 0
+
+      &:after
+        background: none
+
+      @media #{$media-sm-plus-up}
+        margin-left: 8rem
+
+        &:after
+          content: ''
+          position: absolute
+          bottom: -2.5rem
+          left: 5rem
+          right: 5rem
+          height: 1rem
+          background: url('/img/icons/btn-active.svg') center bottom no-repeat
+
+  &__menu
+    display: none
+
+    @media #{$media-sm-plus-up}
+      padding: 2.4rem 2rem 5rem
+      display: flex
+      justify-content: center
+
+  &__header
+    padding: 2rem
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    @media #{$media-sm-plus-up}
+      padding: 1rem 5rem 1rem 3rem
+
+    &-btn-wrap
+      display: flex
+      align-items: center
