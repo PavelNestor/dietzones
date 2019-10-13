@@ -1,5 +1,5 @@
 .footer
-  padding: 3.7rem 7.6vw 4.7rem
+  padding: 3.7rem $padding 4.7rem
   background: $color_main
   color: $color_white
   display: flex
@@ -105,6 +105,10 @@
     width: 100%
     text-align: center
     flex-direction: column
+
+    @media #{$media-sm-plus-up}
+      width: fit-content
+      flex-direction: row
 
     &__wrap
       display: flex

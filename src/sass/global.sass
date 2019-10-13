@@ -71,7 +71,13 @@ h1, h2, h3, h4, h5, h6
     margin-top: 0
 
 h1
+
 h2
+  font-family: $font-family_accent, sans-serif
+  font-size: 4rem
+  line-height: 1em
+  color: $color_main
+
 h3
 h4
 h5
@@ -241,7 +247,7 @@ input[type='number']
       margin-bottom: 1.1rem
 
 .container
-  margin-left: 7.6vw
+  margin-left: $padding
 
 .slider
   margin: 0
@@ -259,14 +265,14 @@ input[type='number']
     justify-content: space-between
     align-items: center
     position: absolute
-    padding-right: 7.6vw
+    padding-right: $padding
 
   &-container
-    padding-left: 7.5vw
+    padding-left: $padding
     position: relative
 
   &-wrapper
-    padding-left: 7.6vw
+    padding-left: $padding
     overflow: hidden
     position: relative
 
@@ -286,7 +292,7 @@ input[type='number']
       display: flex
       height: 4.7rem
       justify-content: center
-      left: calc(7.6vw - 2.4rem)
+      left: calc(#{$padding} - 2.4rem)
       position: absolute
       top: 15.7rem
       width: 4.7rem
@@ -307,7 +313,7 @@ input[type='number']
   &__pagination
     display: flex
     justify-content: center
-    padding: 10rem 7.6vw 5rem
+    padding: 10rem $padding 5rem
 
 .paginatecircle
   background: $color_pagination
@@ -425,3 +431,5 @@ input[type='number']
       border: 1px solid $color_main
 
 //helpers
+.object-position-top
+  object-position: top

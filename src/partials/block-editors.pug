@@ -1,0 +1,52 @@
+include mixins
+
+-
+  var cards = [
+    {
+      path: '/img/block-editors/card-img1',
+      alt: 'Nutrient type and timing for optimal exercise output',
+      title: 'Nutrient type and timing for optimal exercise output',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
+    {
+      path: '/img/block-editors/card-img2',
+      alt: 'Nutrient type and timing for optimal exercise output',
+      title: 'Nutrient type and timing for optimal exercise output',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
+    {
+      path: '/img/block-editors/card-img3',
+      alt: 'Nutrient type and timing for optimal exercise output',
+      title: 'Nutrient type and timing for optimal exercise output',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
+    {
+      path: '/img/block-editors/card-img4',
+      alt: 'Nutrient type and timing for optimal exercise output',
+      title: 'Nutrient type and timing for optimal exercise output',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
+  ];
+
+.editors
+  h2 Editor’s pick
+
+  .editors__content
+    .editors__col
+      p text
+
+    .editors__col
+      each card in cards
+        +card-editors(card)

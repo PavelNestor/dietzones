@@ -1,0 +1,39 @@
+.editors
+  padding: 8rem $padding
+
+  &__content
+    display: flex
+
+  &__col
+    &:nth-child(1)
+      flex-basis: 33%
+
+    &:nth-child(2)
+      flex-basis: 66%
+      flex-wrap: wrap
+      display: flex
+      justify-content: space-between
+
+  &-card
+    width: 45%
+
+    &__image-wrap
+      height: 19rem
+
+    &__content
+      padding-top: 1.5rem
+
+    &__title
+      font-family: $font-family_lora, serif
+      font-size: 2rem
+      line-height: 1.3em
+      color: $color_main
+
+    &__subtitle
+      font-weight: bold
+      font-size: 1.2rem
+      line-height: 1.3em
+      color: $color_accent
+      margin: 1rem 0 .6rem
+
+    &-big
