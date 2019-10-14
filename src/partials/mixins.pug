@@ -13,7 +13,6 @@ mixin picturePng(path, alt='')
 mixin card-main(card)
   li.card-main(data-target="card")
     .card-main__img
-      //- .image-holder
       +pictureJpg(card.path, card.alt)
     .card-main__title= card.title
     .card-main__subtitle= card.subtitle
@@ -39,3 +38,27 @@ mixin slider-btn-next()
   .slider-btn__wrap.slider-btn__wrap_next(data-action='slideRight')
     .slider-btn
       img.slider-btn__img(src="/img/icons/arrow-next.svg", alt='slide left')
+
+mixin card-editors(options)
+  .editors-card
+    .editors-card__image-wrap
+      +pictureJpg(options.path, options.alt)(class='object-position-top')
+    .editors-card__content
+      .editors-card__title= options.title
+      .editors-card__subtitle= options.subtitle
+      +card-footer(options.date, options.looks, options.comments)
+
+mixin card-editors-big(options)
+  .editors-card.editors-card-big
+    .editors-card__image-wrap.editors-card-big__image-wrap
+      //- +pictureJpg(options.path, options.alt)(class='object-position-top')
+      .editors-card-big__image-text= options.imgText
+        | Spring Fruit
+        br
+        | Salad
+
+    .editors-card__content
+      .editors-card__title= options.title
+      .editors-card__text.card-footer__text.editors-card-big__text= options.text
+      .editors-card__subtitle= options.subtitle
+      +card-footer(options.date, options.looks, options.comments)
