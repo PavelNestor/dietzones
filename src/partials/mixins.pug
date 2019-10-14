@@ -47,3 +47,18 @@ mixin card-editors(options)
       .editors-card__title= options.title
       .editors-card__subtitle= options.subtitle
       +card-footer(options.date, options.looks, options.comments)
+
+mixin card-editors-big(options)
+  .editors-card.editors-card-big
+    .editors-card__image-wrap.editors-card-big__image-wrap
+      //- +pictureJpg(options.path, options.alt)(class='object-position-top')
+      .editors-card-big__image-text= options.imgText
+        | Spring Fruit
+        br
+        | Salad
+
+    .editors-card__content
+      .editors-card__title= options.title
+      .editors-card__text.card-footer__text.editors-card-big__text= options.text
+      .editors-card__subtitle= options.subtitle
+      +card-footer(options.date, options.looks, options.comments)

@@ -40,13 +40,27 @@ include mixins
     },
   ];
 
+  var cardsBig = {
+      path: '/img/block-editors/big-card-img1',
+      alt: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      title: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      text: 'Walking is a great form of physical activity that\'s free, low risk and easy to do. Importantly, it can also help you lose weight and belly fat.',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    };
+
 .editors
   h2 Editor’s pick
 
   .editors__content
     .editors__col
-      p text
+      +card-editors-big(cardsBig)
 
     .editors__col
       each card in cards
         +card-editors(card)
+
+  .editors__footer
+    img.editors__footer-more(src='/img/icons/more.svg', alt='Show more')

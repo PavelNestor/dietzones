@@ -1,12 +1,23 @@
 .editors
-  padding: 8rem $padding
+  padding: 4.2rem $padding 5rem
+
+  @media #{$media-sm-plus-up}
+    padding: 8rem $padding
 
   &__content
     display: flex
+    flex-direction: column
+
+    @media #{$media-sm-plus-up}
+      flex-direction: row
 
   &__col
     &:nth-child(1)
       flex-basis: 33%
+      padding-right: 0
+
+      @media #{$media-sm-plus-up}
+        padding-right: 5rem
 
     &:nth-child(2)
       flex-basis: 66%
@@ -15,7 +26,17 @@
       justify-content: space-between
 
   &-card
-    width: 45%
+    width: 100%
+    margin-bottom: 5rem
+
+    @media #{$media-sm-plus-up}
+      width: 45%
+
+    &:nth-child(n + 3)
+      display: none
+
+      @media #{$media-sm-plus-up}
+        display: block
 
     &__image-wrap
       height: 19rem
@@ -37,3 +58,27 @@
       margin: 1rem 0 .6rem
 
     &-big
+      width: 100%
+
+      &__text
+        margin-top: 1.5rem
+
+      &__image-text
+        font-family: $font-family_yesteryear, cursive
+        font-size: 6rem
+        line-height: .9em
+        color: $color_white
+
+      &__image-wrap
+        height: 36.7rem
+        background: url('/img/block-editors/big-card-img1.jpg') no-repeat center center / cover
+        display: flex
+        align-items: center
+        justify-content: center
+        text-align: center
+
+  &__footer
+    display: flex
+    justify-content: center
+
+    &-more
