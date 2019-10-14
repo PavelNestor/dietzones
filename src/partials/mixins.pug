@@ -29,13 +29,13 @@ mixin card-footer(date, looks, comments)
       img.card-footer__comments-img(src="/img/icons/comments.svg", alt="comments")
       p.card-footer__text= comments
 
-mixin slider-btn-prev()
-  .slider-btn__wrap.slider-btn__wrap_prev(data-action='slideLeft')
+mixin slider-btn-prev(prev)
+  .slider-btn__wrap.slider-btn__wrap_prev(data-action= prev)
     .slider-btn
       img.slider-btn__img(src="/img/icons/arrow-prev.svg", alt='slide left')
 
-mixin slider-btn-next()
-  .slider-btn__wrap.slider-btn__wrap_next(data-action='slideRight')
+mixin slider-btn-next(next)
+  .slider-btn__wrap.slider-btn__wrap_next(data-action= next)
     .slider-btn
       img.slider-btn__img(src="/img/icons/arrow-next.svg", alt='slide left')
 
@@ -62,3 +62,11 @@ mixin card-editors-big(options)
       .editors-card__text.card-footer__text.editors-card-big__text= options.text
       .editors-card__subtitle= options.subtitle
       +card-footer(options.date, options.looks, options.comments)
+
+mixin block-slider-card (options)
+  li.card-slider__container(data-target='card')
+    .card-slider__content(data-target='inner')
+      .card-slider__image
+        +pictureJpg(options.path, options.alt)
+      .card-slider__description
+        .card-slider__description-content
