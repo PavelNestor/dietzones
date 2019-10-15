@@ -48,7 +48,9 @@ include mixins
       subtitle: 'WORKOUT CLOTHES',
       date: '14:51 20.09.2019',
       looks: '254',
-      comments: '2'
+      comments: '2',
+      imgText1: 'Spring Fruit',
+      imgText2: 'Salad'
     };
 
 .editors
@@ -57,6 +59,11 @@ include mixins
   .editors__content
     .editors__col
       +card-editors-big(cardsBig)
+        .editors-card-big__image-text
+          | Spring Fruit
+          br
+          | Salad
+
 
     .editors__col
       each card in cards
