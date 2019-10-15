@@ -134,8 +134,6 @@ const handleScrollBehavior = () => {
       this.y = (e.clientY - this._y) * -1;
     },
     setOrigin: function(e) {
-    console.log('e', e);
-
       this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
       this._y = e.offsetTop + Math.floor(e.offsetHeight / 2);
     }
@@ -149,15 +147,14 @@ const handleScrollBehavior = () => {
   var counter = 0;
   var updateRate = 1;
   var isTimeToUpdate = function() {
-    return counter++ % updateRate === 0;
+    console.log('counter++ % updateRate === 0', counter++ % updateRate === 0);
+    
+    return counter++ || updateRate === 0;
   };
 
   //--------------------------------------------------
 
   var onMouseEnterHandler = function(index, event) {
-    console.log('event', event);
-    console.log('index', index);
-    
     update(index, event);
   };
 
@@ -194,7 +191,7 @@ const handleScrollBehavior = () => {
 
   container.forEach((cont, index) => {
     cont.onmouseenter = event => onMouseEnterHandler(index, event);
-    cont.onmouseleave = event => onMouseLeaveHandler(index);
+    cont.onmouseleave = () => onMouseLeaveHandler(index);
     cont.onmousemove = event => onMouseMoveHandler(index, event);
   });
 })();
