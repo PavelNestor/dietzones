@@ -84,14 +84,14 @@ const handleBlockSliderChange = () => {
   const prevSlideTwo = () => {
     if (offsetTwo < 0) {
       offsetTwo += cardTwoOffsetWidth + cardTwoMarginRight;
-      carouselTwo.style.transform = `translateX(${offset}px)`;
+      carouselTwo.style.transform = `translateX(${offsetTwo}px)`;
     }
   };
 
   const nextSlideTwo = () => {
     if (offsetTwo >= maxXTwo) {
       offsetTwo -= cardTwoOffsetWidth + cardTwoMarginRight;
-      carouselTwo.style.transform = `translateX(${offset}px)`;
+      carouselTwo.style.transform = `translateX(${offsetTwo}px)`;
     }
   };
 

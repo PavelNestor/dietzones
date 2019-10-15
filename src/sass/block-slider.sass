@@ -1,19 +1,21 @@
 .card-slider
   &__container
-    perspective: 4rem
+    padding: 5rem
+    perspective: 10rem
 
   &__content
-    width: 20em
-    height: 18em
+    width: 37rem
+    // height: 30rem
     background-color: red
+    transition: transform 0.5s
+    position: relative
 
-#helper
-  color: white
-  padding: 0.2em
-  border-radius: 5%
-  background-color: grey
-  position: absolute
-  z-index: 1
-
-#container .inner
-  transition: transform 0.5s
+    &::after
+      position: absolute
+      content: ''
+      background: #2F3846
+      opacity: 0.4
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
