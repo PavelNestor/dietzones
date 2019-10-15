@@ -1,0 +1,51 @@
+.know
+  padding: 4.2rem $padding 5rem
+
+  @media #{$media-sm-plus-up}
+    padding: 8rem $padding
+
+  &__content
+    display: flex
+    flex-direction: column
+
+    @media #{$media-sm-plus-up}
+      flex-direction: row
+
+  &__col
+    display: flex
+
+    &:nth-child(1)
+      flex-basis: 66%
+      flex-wrap: wrap
+
+    &:nth-child(2)
+      flex-basis: 34%
+
+  &-slide
+    &__wrap
+      width: calc(50% - 5rem)
+
+    &__image-wrap
+      align-items: flex-end
+
+    &__image-text
+      $size: 4.5rem
+      color: $color_main
+      font-family: $font-family
+      font-weight: bold
+      font-size: 1.2rem
+      line-height: 1.3em
+      display: flex
+      align-items: center
+      text-align: center
+      text-transform: uppercase
+
+      &-wrap
+        height: $size
+        width: $size * 2
+        border-top-left-radius: $size * 2
+        border-top-right-radius: $size * 2
+        background: $color_white
+        display: flex
+        align-items: flex-end
+        justify-content: center

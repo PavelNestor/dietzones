@@ -1,0 +1,87 @@
+include mixins
+
+-
+  var cardsBig = [
+    {
+      path: '/img/block-editors/big-card-img1',
+      alt: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      title: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      text: 'Walking is a great form of physical activity that\'s free, low risk and easy to do. Importantly, it can also help you lose weight and belly fat.',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2',
+      imgText: 'News'
+    },
+    {
+      path: '/img/block-editors/big-card-img1',
+      alt: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      title: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      text: 'Walking is a great form of physical activity that\'s free, low risk and easy to do. Importantly, it can also help you lose weight and belly fat.',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2',
+      class: 'hottest-card-big__image-wrap_two',
+      imgText: 'News'
+    },
+    {
+      path: '/img/block-editors/big-card-img1',
+      alt: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      title: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      text: 'Walking is a great form of physical activity that\'s free, low risk and easy to do. Importantly, it can also help you lose weight and belly fat.',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2',
+      class: 'hottest-card-big__image-wrap_three',
+      imgText: 'Blog'
+    },
+    {
+      path: '/img/block-editors/big-card-img1',
+      alt: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      title: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      text: 'Walking is a great form of physical activity that\'s free, low risk and easy to do. Importantly, it can also help you lose weight and belly fat.',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2',
+      class: 'hottest-card-big__image-wrap_four',
+      imgText: 'Blog'
+    },
+    {
+      path: '/img/block-editors/big-card-img1',
+      alt: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      title: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      text: 'Walking is a great form of physical activity that\'s free, low risk and easy to do. Importantly, it can also help you lose weight and belly fat.',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2',
+      class: 'hottest-card-big__image-wrap_five',
+      imgText: 'Events'
+    },
+    {
+      path: '/img/block-editors/big-card-img1',
+      alt: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      title: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      text: 'Walking is a great form of physical activity that\'s free, low risk and easy to do. Importantly, it can also help you lose weight and belly fat.',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2',
+      class: 'hottest-card-big__image-wrap_six',
+      imgText: 'Events'
+    },
+  ];
+
+section.know
+  h2 Did you know?
+
+  .know__content
+    .know__col
+      each card in cardsBig
+        +card-know-big(card)
+
+    .know__col
+      h2 Top 3

@@ -79,6 +79,21 @@ mixin card-hottest-big(options)
       .editors-card__subtitle= options.subtitle
       +card-footer(options.date, options.looks, options.comments)
 
+mixin card-know-big(options)
+  .hottest-card-big__wrap.know-slide__wrap
+    .hottest-card-big
+      .editors-card__image-wrap.hottest-card-big__image-wrap.know-slide__image-wrap(class= options.class)
+        .know-slide__image-text-wrap
+          .hottest-card-big__image-text.know-slide__image-text= options.imgText
+
+      .editors-card__content.hottest-card-big__content
+        .editors-card__title.hottest-card-big__title= options.title
+        .editors-card__text.card-footer__text.hottest-card-big__text= options.text
+
+    .hottest-card-big__footer
+      .editors-card__subtitle= options.subtitle
+      +card-footer(options.date, options.looks, options.comments)
+
 mixin block-slider-card (options)
   li.card-slider__container(data-target='card')
     .card-slider__content(data-target='inner')
