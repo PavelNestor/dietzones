@@ -1,0 +1,63 @@
+.card-slider
+  &__container
+    perspective: 10rem
+    margin-right: 5rem
+
+  &__image
+    height: 30rem
+
+  &__content
+    width: 37rem
+    background-color: red
+    transition: transform 0.5s
+    position: relative
+
+    &::after
+      position: absolute
+      content: ''
+      background: #2F3846
+      opacity: 0.4
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+
+  &__description
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    display: flex
+    justify-content: center
+    align-items: center
+
+    &-content
+      position: relative
+      color: $color_white
+      font-family: $font-family_accent, sans-serif
+      font-size: 2rem
+      line-height: 1em
+      z-index: 1
+      transform: translateZ(1px)
+
+      &:hover
+        transform: translateZ(15px)
+
+      &:before
+        content: ''
+        position: absolute
+        top: -1rem
+        left: -0.5rem
+        right: -0.5rem
+        height: 1rem
+        background: url('/img/icons/btn-active_white.svg') center bottom no-repeat
+
+      &:after
+        content: ''
+        position: absolute
+        bottom: -1rem
+        left: -0.5rem
+        right: -0.5rem
+        height: 1rem
+        background: url('/img/icons/btn-active_white.svg') center bottom no-repeat
