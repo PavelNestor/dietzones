@@ -6,6 +6,7 @@ include mixins
       path: '/img/block-main/card-img1',
       alt: 'What Breaks a Fast? Foods, Drinks, and Supplements',
       title: 'What Breaks a Fast? Foods, Drinks, and Supplements',
+      description: 'Spring Fruit Salad',
       subtitle: 'WORKOUT CLOTHES',
       date: '14:51 20.09.2019',
       looks: '254',
@@ -15,6 +16,7 @@ include mixins
       path: '/img/block-main/card-img2',
       alt: '10 Science-Based Benefits of Fennel and Fennel Seeds',
       title: '10 Science-Based Benefits of Fennel and Fennel Seeds',
+      description: 'Organic food',
       subtitle: 'WORKOUT CLOTHES',
       date: '14:51 20.09.2019',
       looks: '254',
@@ -24,6 +26,7 @@ include mixins
       path: '/img/block-main/card-img3',
       alt: 'Bookmark This List of Low-Carb Foods For Your Next Trip to the Grocery Store',
       title: 'Bookmark This List of Low-Carb Foods For Your Next Trip to the Grocery Store',
+      description: 'Food passion',
       subtitle: 'WORKOUT CLOTHES',
       date: '14:51 20.09.2019',
       looks: '254',
@@ -47,5 +50,5 @@ include mixins
         each card in cards
           +block-slider-card(card)
 
-      +slider-btn-prev('block-carousel-prev')
-      +slider-btn-next('block-carousel-next')
+      +slider-btn-prev('block-carousel-prev')(class='card-slider__prev')
+      +slider-btn-next('block-carousel-next')(class='card-slider__next')

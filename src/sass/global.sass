@@ -74,9 +74,12 @@ h1
 
 h2
   font-family: $font-family_accent, sans-serif
-  font-size: 4rem
+  font-size: 3rem
   line-height: 1em
   color: $color_main
+
+  @media #{$media-sm-plus-up}
+    font-size: 4rem
 
 h3
 h4
@@ -247,7 +250,10 @@ input[type='number']
       margin-bottom: 1.1rem
 
 .container
-  margin-left: $padding
+  margin-left: $padding-mobile
+
+  @media #{$media-sm-plus-up}
+    margin-left: $padding
 
 .slider
   margin: 0
@@ -265,16 +271,25 @@ input[type='number']
     justify-content: space-between
     align-items: center
     position: absolute
-    padding-right: $padding
+    padding-right: $padding-mobile
+
+    @media #{$media-sm-plus-up}
+      padding-right: $padding
 
   &-container
-    padding-left: $padding
     position: relative
+    padding-left: $padding-mobile
+
+    @media #{$media-sm-plus-up}
+      padding-left: $padding
 
   &-wrapper
-    padding-left: $padding
+    padding-left: $padding-mobile
     overflow: hidden
     position: relative
+
+    @media #{$media-sm-plus-up}
+      padding-left: $padding
 
   &-btn
     width: 3.5rem
@@ -290,22 +305,29 @@ input[type='number']
       border-radius: 50%
       border: 1px solid $color_white
       display: flex
-      height: 4.7rem
+      height: 5.5rem
       justify-content: center
-      left: calc(#{$padding} - 2.4rem)
+      left: calc(#{$padding-mobile} - 4.1rem)
       position: absolute
-      top: 15.7rem
-      width: 4.7rem
+      top: 15.2rem
+      width: 5.5rem
       z-index: 2
       transform: scale(1)
       transition: .5s
 
+      @media #{$media-sm-plus-up}
+        left: calc(#{$padding} - 2.7rem)
+        top: 15.5rem
+
       &:hover
-        box-shadow: inset 0px 0px 1rem rgba(255,255,255,.9)
+        box-shadow: inset 0px 0px 2rem rgba(255,255,255,.9)
         transform: scale(1.2)
 
       &_next
-        left: calc(92.4vw - 2.4rem)
+        left: calc(100vw - #{$padding-mobile} - 2.7rem)
+
+        @media #{$media-sm-plus-up}
+          left: calc(100vw - #{$padding} - 2.7rem)
 
     &__img
       width: 2rem
@@ -313,7 +335,10 @@ input[type='number']
   &__pagination
     display: flex
     justify-content: center
-    padding: 10rem $padding 5rem
+    padding: 3rem $padding-mobile 5rem
+
+    @media #{$media-sm-plus-up}
+      padding: 10rem $padding 5rem
 
 .paginatecircle
   background: $color_pagination
@@ -342,7 +367,7 @@ input[type='number']
     line-height: 1em
 
 .card-main
-  min-width: 32rem
+  min-width: 30.9rem
   margin-right: 1px
   display: inline-block
 
@@ -350,15 +375,24 @@ input[type='number']
     min-width: 36rem
 
   &__img
-    height: 36rem
-    margin-bottom: 1.5rem
+    height: 31rem
+    margin-bottom: 2.1rem
+
+    @media #{$media-sm-plus-up}
+      margin-bottom: 1.8rem
+      height: 36rem
 
   &__title
     font-family: $font-family_accent, sans-serif
     font-size: 2rem
-    line-height: 1em
-    margin-bottom: 2rem
-    padding-right: 6rem
+    line-height: .9em
+
+    &-wrap
+      padding-right: 2rem
+      margin-bottom: 2rem
+
+      @media #{$media-sm-plus-up}
+        padding-right: 6rem
 
   &__subtitle
     font-weight: bold
@@ -371,7 +405,7 @@ input[type='number']
   display: flex
 
   &__date
-    margin-right: 2rem
+    margin-right: 3rem
 
   &__text
     font-family: $font-family_roboto, sans-serif
@@ -382,7 +416,7 @@ input[type='number']
 
   &__looks
     display: flex
-    margin-right: 2rem
+    margin-right: 2.3rem
 
     &-img
       width: 2rem
@@ -430,6 +464,71 @@ input[type='number']
       background: $color_white
       color: $color_main
       border: 1px solid $color_main
+
+.updates
+  background: url("/img/icons/mail_white.svg") no-repeat calc(100% + 1.6rem) 3.5rem/ 5.6rem auto, $color_gradient
+  padding: 3rem 6.1rem 3rem 3.3rem
+
+  &_mobile-wrap
+    display: block
+
+    @media #{$media-sm-plus-up}
+      display: none
+
+  &_desk-wrap
+    display: none
+
+    @media #{$media-sm-plus-up}
+      display: block
+
+  &__title
+    font-family: $font-family_accent
+    font-size: 2rem
+    line-height: 1.3em
+    color: $color_white
+
+  &__subtitle
+    color: $color_white
+    font-family: $font-family_roboto
+    font-size: 1.2rem
+    line-height: 1.1em
+    margin: 1rem 0 1.3rem
+
+  &__form
+    position: relative
+
+  &__btn
+    position: absolute
+    right: 0
+    top: calc(50% - 1rem)
+    outline: none
+    border: none
+    background: none
+    text-transform: uppercase
+    cursor: pointer
+    font-family: $font-family_accent
+    font-size: 1.4rem
+    line-height: 1em
+    color: $color_white
+
+  &__input
+    width: 100%
+    outline: none
+    border: 0
+    border-bottom: 1px solid $color_white
+    padding: 1.4rem 0
+    position: relative
+    background: transparent
+    font-family: $font-family_roboto
+    font-size: 1.2rem
+    line-height: 1.1em
+    color: $color_white
+
+    &::placeholder
+      font-family: $font-family_roboto
+      font-size: 1.2rem
+      line-height: 1.1em
+      color: $color_white
 
 //helpers
 .object-position-top

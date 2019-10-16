@@ -14,7 +14,8 @@ mixin card-main(card)
   li.card-main(data-target="card")
     .card-main__img
       +pictureJpg(card.path, card.alt)
-    .card-main__title= card.title
+    .card-main__title-wrap
+      a(href="#").card-main__title= card.title
     .card-main__subtitle= card.subtitle
     +card-footer(card.date, card.looks, card.comments)
 
@@ -30,12 +31,12 @@ mixin card-footer(date, looks, comments)
       p.card-footer__text= comments
 
 mixin slider-btn-prev(prev)
-  .slider-btn__wrap.slider-btn__wrap_prev(data-action= prev)
+  .slider-btn__wrap.slider-btn__wrap_prev(data-action= prev, class!=attributes.class)
     .slider-btn
       img.slider-btn__img(src="/img/icons/arrow-prev.svg", alt='slide left')
 
 mixin slider-btn-next(next)
-  .slider-btn__wrap.slider-btn__wrap_next(data-action= next)
+  .slider-btn__wrap.slider-btn__wrap_next(data-action= next, class!=attributes.class)
     .slider-btn
       img.slider-btn__img(src="/img/icons/arrow-next.svg", alt='slide left')
 
@@ -44,7 +45,7 @@ mixin card-editors(options)
     .editors-card__image-wrap
       +pictureJpg(options.path, options.alt)(class='object-position-top')
     .editors-card__content
-      .editors-card__title= options.title
+      a(href="#").editors-card__title= options.title
       .editors-card__subtitle= options.subtitle
       +card-footer(options.date, options.looks, options.comments)
 
@@ -57,7 +58,7 @@ mixin card-editors-big(options)
         = options.imgText2
 
     .editors-card__content
-      .editors-card__title= options.title
+      a(href="#").editors-card__title= options.title
       .editors-card__text.card-footer__text.editors-card-big__text= options.text
       .editors-card__subtitle= options.subtitle
       +card-footer(options.date, options.looks, options.comments)
@@ -72,7 +73,7 @@ mixin card-hottest-big(options)
           = options.imgText2
 
       .editors-card__content.hottest-card-big__content
-        .editors-card__title.hottest-card-big__title= options.title
+        a(href="#").editors-card__title.hottest-card-big__title= options.title
         .editors-card__text.card-footer__text.hottest-card-big__text= options.text
 
     .hottest-card-big__footer
@@ -80,14 +81,14 @@ mixin card-hottest-big(options)
       +card-footer(options.date, options.looks, options.comments)
 
 mixin card-know-big(options)
-  .hottest-card-big__wrap.know-slide__wrap
+  .know-slide__wrap
     .hottest-card-big
       .editors-card__image-wrap.hottest-card-big__image-wrap.know-slide__image-wrap(class= options.class)
         .know-slide__image-text-wrap
           .hottest-card-big__image-text.know-slide__image-text= options.imgText
 
       .editors-card__content.hottest-card-big__content
-        .editors-card__title.hottest-card-big__title= options.title
+        a(href="#").editors-card__title.hottest-card-big__title= options.title
         .editors-card__text.card-footer__text.hottest-card-big__text= options.text
 
     .hottest-card-big__footer
@@ -100,4 +101,40 @@ mixin block-slider-card (options)
       .card-slider__image
         +pictureJpg(options.path, options.alt)
       .card-slider__description
-        .card-slider__description-content Spring Fruit Salad
+        a(href="#").card-slider__description-content= options.description
+
+mixin card-know(options)
+  .know-card
+    .know-card__image-wrap
+      +pictureJpg(options.path, options.alt)(class='object-position-top')
+    .know-card__content
+      a(href="#").know-card__title= options.title
+      .know-card__subtitle= options.subtitle
+      +card-footer(options.date, options.looks, options.comments)
+
+mixin card-know-events(options)
+  .know-slide__wrap
+    .hottest-card-big
+      .editors-card__image-wrap.hottest-card-big__image-wrap.know-slide__image-wrap(class= options.class)
+        .know-slide__image-text-wrap
+          .hottest-card-big__image-text.know-slide__image-text= options.imgText
+
+      .editors-card__content.hottest-card-big__content
+        .know-card__date-text-wrap
+          .know-card__date-text= options.date
+        .editors-card__title.hottest-card-big__title= options.title
+        .editors-card__text.card-footer__text.hottest-card-big__text= options.text
+
+    .know-card__footer
+      a(href="#").know-card__button Pre-Recorded Webinars
+
+mixin block-updates()
+  .updates
+    .updates__title
+      | Want to receive
+      br
+      | updates?
+    .updates__subtitle Subscribe to the diet newsletter
+    form.updates__form
+      input.updates__input(type="text", placeholder='Enter your email')
+      button.updates__btn(type="submit", value='ok') ok
