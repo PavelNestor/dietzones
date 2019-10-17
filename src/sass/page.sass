@@ -1,0 +1,53 @@
+// page BLOG
+.blog
+  &__title-wrap
+    position: relative
+
+    &::before
+      position: absolute
+      content: ''
+      border: 1px solid $color_accent
+      border-radius: 50%
+      width: 2rem
+      height: 2rem
+      top: calc( 50% - 1rem )
+      left: calc( #{ - $padding-mobile} / 2 - 1rem)
+      background: url('/img/icons/arrow_blue.svg') no-repeat center center / 60%
+
+      @media #{$media-sm-plus-up}
+        top: calc( 50% - 1.7rem )
+        left: calc( #{ - $padding} / 2 - 1.7rem)
+        width: 3.5rem
+        height: 3.5rem
+
+  &__header
+    padding: 0 $padding-mobile
+
+    @media #{$media-sm-plus-up}
+      padding: 0 $padding
+
+
+  &__content
+    padding: 5.2rem $padding-mobile 0
+    display: flex
+    flex-direction: column
+
+    @media #{$media-sm-plus-up}
+      padding: 5.2rem $padding 0
+      flex-direction: row
+
+  &__col
+
+    .hottest-card-big__wrap:last-of-type
+      margin-right: 0
+
+      @media #{$media-sm-plus-up}
+        margin-right: 5rem
+
+    &:nth-child(3)
+      .hottest-card-big__wrap
+        margin-right: 0
+
+  &__footer
+    display: flex
+    justify-content: center

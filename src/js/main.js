@@ -21,7 +21,8 @@ const $$ = document.querySelectorAll.bind(document);
 // main slider
 const handleSliderChange = () => {
   const carousel = $("[data-target='carousel']");
-  const leftButton = $("[data-action='slideLeft']");
+  if (carousel) {
+    const leftButton = $("[data-action='slideLeft']");
   const rightButton = $("[data-action='slideRight']");
   const card = carousel.querySelector("[data-target='card']");
   const dots = $$('.paginatecircle');
@@ -34,7 +35,8 @@ const handleSliderChange = () => {
 
   let offset = 0;
   carousel.style.transform = `translateX(${offset}px)`;
-  const maxX = (cardCount - Math.floor(carouselWidth / cardOffsetWidth)) * cardOffsetWidth * -1;
+  const amountOnScreen = Math.floor(carouselWidth / cardOffsetWidth) < 1 ? 1 : Math.floor(carouselWidth / cardOffsetWidth);
+  const maxX = (cardCount - amountOnScreen) * cardOffsetWidth * -1;
 
 
   dots.forEach(dot => {
@@ -64,41 +66,47 @@ const handleSliderChange = () => {
 
   leftButton.addEventListener("click", prevSlide);
   rightButton.addEventListener("click", nextSlide);
+  }
 };
 
 // block slider
 const handleBlockSliderChange = () => {
   const carouselTwo = $("[data-target='block-carousel']");
-  const leftButtonTwo = $("[data-action='block-carousel-prev']");
-  const rightButtonTwo = $("[data-action='block-carousel-next']");
-  const cardTwo = carouselTwo.querySelector("[data-target='card']");
-  const cardTwoOffsetWidth = cardTwo.offsetWidth;
 
-  const carouselTwoWidth = carouselTwo.offsetWidth;
-  const cardStyleTwo = cardTwo.currentStyle || window.getComputedStyle(cardTwo)
-  const cardTwoMarginRight = Number(cardStyleTwo.marginRight.match(/\d+/g)[0]);
-  const cardTwoCount = carouselTwo.querySelectorAll("[data-target='card']").length;
+  if (carouselTwo) {
+    const leftButtonTwo = $("[data-action='block-carousel-prev']");
+    const rightButtonTwo = $("[data-action='block-carousel-next']");
+    const cardTwo = carouselTwo.querySelector("[data-target='card']");
+    const cardTwoOffsetWidth = cardTwo.offsetWidth;
 
-  let offsetTwo = 0;
-  carouselTwo.style.transform = `translateX(${offsetTwo}px)`;
-  const maxXTwo = (cardTwoCount - Math.floor(carouselTwoWidth / cardTwoOffsetWidth)) * cardTwoOffsetWidth * -1;
+    const carouselTwoWidth = carouselTwo.offsetWidth;
+    const cardStyleTwo = cardTwo.currentStyle || window.getComputedStyle(cardTwo)
+    const cardTwoMarginRight = Number(cardStyleTwo.marginRight.match(/\d+/g)[0]);
+    const cardTwoCount = carouselTwo.querySelectorAll("[data-target='card']").length;
 
-  const prevSlideTwo = () => {
-    if (offsetTwo < 0) {
-      offsetTwo += cardTwoOffsetWidth + cardTwoMarginRight;
-      carouselTwo.style.transform = `translateX(${offsetTwo}px)`;
-    }
-  };
+    let offsetTwo = 0;
+    carouselTwo.style.transform = `translateX(${offsetTwo}px)`;
+    const amountOnScreenTwo = Math.floor(carouselTwoWidth / cardTwoOffsetWidth) < 1 ? 1 : Math.floor(carouselTwoWidth / cardTwoOffsetWidth);
+    const maxXTwo = (cardTwoCount - amountOnScreenTwo) * cardTwoOffsetWidth * -1;
 
-  const nextSlideTwo = () => {
-    if (offsetTwo >= maxXTwo) {
-      offsetTwo -= cardTwoOffsetWidth + cardTwoMarginRight;
-      carouselTwo.style.transform = `translateX(${offsetTwo}px)`;
-    }
-  };
+    const prevSlideTwo = () => {
+      if (offsetTwo < 0) {
+        offsetTwo += cardTwoOffsetWidth + cardTwoMarginRight;
+        carouselTwo.style.transform = `translateX(${offsetTwo}px)`;
+      }
+    };
 
-  leftButtonTwo.addEventListener("click", prevSlideTwo);
-  rightButtonTwo.addEventListener("click", nextSlideTwo);
+    const nextSlideTwo = () => {
+
+      if (offsetTwo >= maxXTwo) {
+        offsetTwo -= cardTwoOffsetWidth + cardTwoMarginRight;
+        carouselTwo.style.transform = `translateX(${offsetTwo}px)`;
+      }
+    };
+
+    leftButtonTwo.addEventListener("click", prevSlideTwo);
+    rightButtonTwo.addEventListener("click", nextSlideTwo);
+  }
 };
 
 //Navbar scrollBehavior
@@ -118,85 +126,87 @@ const handleScrollBehavior = () => {
 };
 
 // card animation:
-(function() {
-  // Init
-  const cardWrap = $("[data-target='block-carousel']");
-  const container = cardWrap.querySelectorAll("[data-target='card']"),
-    inner = $$("[data-target='inner']");
+const cardWrap = $("[data-target='block-carousel']");
+if (cardWrap) {
+  (function() {
+    // Init
+    const cardWrap = $("[data-target='block-carousel']");
+    const container = cardWrap.querySelectorAll("[data-target='card']"),
+      inner = $$("[data-target='inner']");
+  
+    // Mouse
+    var mouse = {
+      _x: 0,
+      _y: 0,
+      x: 0,
+      y: 0,
+      updatePosition: function(index, event) {
+        var e = event || window.event;
+        this.x = e.clientX - this._x;
+        this.y = (e.clientY - this._y) * -1;
+      },
+      setOrigin: function(e) {
+        this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
+        this._y = e.offsetTop + Math.floor(e.offsetHeight / 2);
+      }
+    };
+  
+    // Track the mouse position relative to the center of the container.
+    container.forEach(cont => mouse.setOrigin(cont));
+  
+    //--------------------------------------------------
+  
+    var counter = 0;
+    var updateRate = 1;
+    var isTimeToUpdate = function() {
 
-  // Mouse
-  var mouse = {
-    _x: 0,
-    _y: 0,
-    x: 0,
-    y: 0,
-    updatePosition: function(index, event) {
-      var e = event || window.event;
-      this.x = e.clientX - this._x;
-      this.y = (e.clientY - this._y) * -1;
-    },
-    setOrigin: function(e) {
-      this._x = e.offsetLeft + Math.floor(e.offsetWidth / 2);
-      this._y = e.offsetTop + Math.floor(e.offsetHeight / 2);
-    }
-  };
-
-  // Track the mouse position relative to the center of the container.
-  container.forEach(cont => mouse.setOrigin(cont));
-
-  //--------------------------------------------------
-
-  var counter = 0;
-  var updateRate = 1;
-  var isTimeToUpdate = function() {
-    console.log('counter++ % updateRate === 0', counter++ % updateRate === 0);
-    
-    return counter++ || updateRate === 0;
-  };
-
-  //--------------------------------------------------
-
-  var onMouseEnterHandler = function(index, event) {
-    update(index, event);
-  };
-
-  var onMouseLeaveHandler = function(index) {
-    inner[index].style = "";
-  };
-
-  var onMouseMoveHandler = function(index, event) {
-    if (isTimeToUpdate()) {
+      return counter++ || updateRate === 0;
+    };
+  
+    //--------------------------------------------------
+  
+    var onMouseEnterHandler = function(index, event) {
       update(index, event);
     };
-  };
-
-  //--------------------------------------------------
-
-  var updateTransformStyle = function(index, x, y) {
-    var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
-    inner[index].style.transform = style;
-    inner[index].style.webkitTransform = style;
-    inner[index].style.mozTransform = style;
-    inner[index].style.msTransform = style;
-    inner[index].style.oTransform = style;
-  };
-
-  var update = function(index, event) {
-    mouse.updatePosition(index, event);
-    updateTransformStyle(index,
-      (mouse.y / inner[index].offsetHeight/2).toFixed(2),
-      (mouse.x / inner[index].offsetWidth/2).toFixed(2)
-    );
-  };
-
-  //--------------------------------------------------
-
-  container.forEach((cont, index) => {
-    cont.onmouseenter = event => onMouseEnterHandler(index, event);
-    cont.onmouseleave = () => onMouseLeaveHandler(index);
-    cont.onmousemove = event => onMouseMoveHandler(index, event);
-  });
-})();
+  
+    var onMouseLeaveHandler = function(index) {
+      inner[index].style = "";
+    };
+  
+    var onMouseMoveHandler = function(index, event) {
+      if (isTimeToUpdate()) {
+        update(index, event);
+      };
+    };
+  
+    //--------------------------------------------------
+  
+    var updateTransformStyle = function(index, x, y) {
+      var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
+      inner[index].style.transform = style;
+      inner[index].style.webkitTransform = style;
+      inner[index].style.mozTransform = style;
+      inner[index].style.msTransform = style;
+      inner[index].style.oTransform = style;
+    };
+  
+    var update = function(index, event) {
+      mouse.updatePosition(index, event);
+      updateTransformStyle(index,
+        (mouse.y / inner[index].offsetHeight/2).toFixed(2),
+        (mouse.x / inner[index].offsetWidth/2).toFixed(2)
+      );
+    };
+  
+    //--------------------------------------------------
+  
+    container.forEach((cont, index) => {
+      cont.onmouseenter = event => onMouseEnterHandler(index, event);
+      cont.onmouseleave = () => onMouseLeaveHandler(index);
+      cont.onmousemove = event => onMouseMoveHandler(index, event);
+    });
+  })();
+}
 
 const ready = () => {
   handleSliderChange();

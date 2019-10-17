@@ -1,0 +1,24 @@
+extends partials/layout
+
+block vars
+  - var title = "Blog - DietZones.com"
+
+block content
+  include partials/menu-mobile
+  include partials/navigation-page
+
+  section.blog
+    .blog__header
+      .blog__title-wrap
+        h2.blog__title Blog
+
+      include partials/block-page-newpost
+
+    include partials/block-blog-content
+
+    .blog__footer
+      img.editors__footer-more(src='/img/icons/more.svg', alt='Show more')
+    
+    include partials/block-pagination
+
+  include partials/block-page-hottest

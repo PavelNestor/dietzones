@@ -159,6 +159,14 @@
       display: block
       width: fit-content
       font-size: 1.2rem
+      background-image: linear-gradient(to right, $color_white 0%, $color_white 35%, $color_accent 70%, $color_accent 100%)
+      background-size: 300%
+      transition: .5s
+
+      &:hover
+        background-position: right center
+        color: $color_white
+        box-shadow: inset 0 0 2px 1px $color_white
 
     &__footer
       display: flex
