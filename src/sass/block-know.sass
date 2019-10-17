@@ -1,0 +1,183 @@
+.know
+  padding: 4.2rem $padding-mobile 5rem
+
+  @media #{$media-sm-plus-up}
+    padding: 3.7rem $padding 2rem
+
+  &__title
+    margin-bottom: 3.8rem
+
+  &__title-top
+    margin: 0
+
+    &-wrap
+      display: flex
+      justify-content: center
+      margin: 0 0 3.8rem 0
+      padding-top: 5.2rem
+      position: relative
+
+      &:after
+        content: ''
+        position: absolute
+        bottom: -2.5rem
+        left: 5rem
+        right: 5rem
+        height: 1rem
+        background: url('/img/icons/btn-active.svg') center bottom no-repeat
+
+  &__content
+    display: flex
+    flex-direction: column-reverse
+
+    @media #{$media-sm-plus-up}
+      flex-direction: row
+
+  &__col
+    display: flex
+
+    &:nth-child(1)
+      flex-basis: 69.2%
+      flex-wrap: wrap
+
+    &:nth-child(2)
+      display: none
+      flex-basis: 30.7%
+      flex-direction: column
+
+      @media #{$media-sm-plus-up}
+        display: flex
+
+  &-slide
+    &__wrap
+      width: 100%
+      margin-bottom: 6.4rem
+
+      @media #{$media-sm-plus-up}
+        width: calc(50% - 5rem)
+
+      &:hover
+        .know-slide__image-text
+          $size: 7rem
+          font-size: 2.4rem
+          line-height: 2em
+
+          &-wrap
+            height: $size
+            width: $size * 2
+            border-top-left-radius: $size * 2
+            border-top-right-radius: $size * 2
+
+      &:nth-child(2n + 1)
+        display: none
+
+        @media #{$media-sm-plus-up}
+          display: flex
+
+    &__image-wrap
+      align-items: flex-end
+
+    &__image-text
+      $size: 4.5rem
+      color: $color_main
+      font-family: $font-family
+      font-weight: bold
+      font-size: 1.2rem
+      line-height: 2.7em
+      display: flex
+      align-items: center
+      text-align: center
+      text-transform: uppercase
+      transition: .5s
+
+      &-wrap
+        height: $size
+        width: $size * 2
+        border-top-left-radius: $size * 2
+        border-top-right-radius: $size * 2
+        background: $color_white
+        display: flex
+        align-items: flex-end
+        justify-content: center
+        transition: .5s
+
+  &-card
+    width: 100%
+    margin-bottom: 5.6rem
+
+    &:nth-child(n + 3)
+      display: none
+
+      @media #{$media-sm-plus-up}
+        display: block
+
+    &__date-text
+      font-family: $font-family_roboto
+      font-size: 1.2rem
+      line-height: 1.2em
+      color: $color_card_footer
+
+      &-wrap
+        padding: 0 0 3.5rem
+        text-align: center
+        position: relative
+
+        &:after
+          content: ''
+          position: absolute
+          bottom: 1.4rem
+          left: 5rem
+          right: 5rem
+          height: 1rem
+          background: url('/img/icons/btn-active.svg') center bottom no-repeat
+
+    &__image-wrap
+      height: 19rem
+
+    &__image-wrap_two
+      background: url('/img/block-know/card-img2.jpg') no-repeat center center / cover
+
+    &__image-wrap_four
+      background: url('/img/block-know/card-img4.jpg') no-repeat center center / cover
+
+    &__image-wrap_five
+      background: url('/img/block-know/card-img3.jpg') no-repeat center center / cover
+
+    &__content
+      padding-top: 1.5rem
+
+    &__title
+      font-family: $font-family_lora, serif
+      font-size: 2rem
+      line-height: 1.3em
+      color: $color_main
+
+    &__button
+      padding: 1.1rem 2.3rem
+      border: 1px solid $color_accent
+      color: $color_accent
+      display: block
+      width: fit-content
+      font-size: 1.2rem
+
+    &__footer
+      display: flex
+      justify-content: center
+      padding: 1.5rem
+
+    &__subtitle
+      font-weight: bold
+      font-size: 1.2rem
+      line-height: 1.3em
+      color: $color_accent
+      margin: 1rem 0 .6rem
+
+  &__footer
+    display: flex
+    justify-content: center
+    margin-bottom: 5rem
+
+    @media #{$media-sm-plus-up}
+      display: none
+
+    &-more

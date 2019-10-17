@@ -1,15 +1,21 @@
 .card-slider
   &__container
     perspective: 10rem
-    margin-right: 5rem
+    margin-right: 1px
+
+    @media #{$media-sm-plus-up}
+      margin-right: 5rem
 
   &__image
     height: 30rem
 
   &__content
-    width: 37rem
+    width: 100vw
     transition: transform 0.5s
     position: relative
+
+    @media #{$media-sm-plus-up}
+      width: 37.7rem
 
     &::after
       position: absolute
@@ -46,7 +52,7 @@
       &:before
         content: ''
         position: absolute
-        top: -1rem
+        top: -2rem
         left: -0.5rem
         right: -0.5rem
         height: 1rem
@@ -55,8 +61,22 @@
       &:after
         content: ''
         position: absolute
-        bottom: -1rem
+        bottom: -1.7rem
         left: -0.5rem
         right: -0.5rem
         height: 1rem
         background: url('/img/icons/btn-active_white.svg') center bottom no-repeat
+
+  &__prev
+    top: 12.2rem
+
+  &__next
+    top: 12.2rem
+    left: calc(100vw - 7.2vw - 4.5rem)
+
+.block-slider
+  .slider-wrapper
+    padding: 0
+
+    @media #{$media-sm-plus-up}
+      padding-left: $padding

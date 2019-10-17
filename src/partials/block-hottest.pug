@@ -32,14 +32,17 @@ include mixins
       date: '14:51 20.09.2019',
       looks: '254',
       comments: '2',
-      imgText1: 'Flattering Workout',
-      imgText2: 'Clothes',
+      imgText1: 'Flattering',
+      imgText2: 'Workout Clothes',
       class: 'hottest-card-big__image-wrap_three'
     },
   ];
 
-.hottest
-  h2 This week’s hottest
+section.hottest
+  h2.hottest__title
+    | This week’s
+    br
+    | hottest
 
   .hottest__content
     each card in cardsBig

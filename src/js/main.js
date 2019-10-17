@@ -5,6 +5,7 @@ const $$ = document.querySelectorAll.bind(document);
 
 (function() {
   var menuOpen = $('#menu-open');
+  var menuOpenScroll = $('#menu-open-scroll');
   var menuClose = $('#menu-close');
   var menuContent = $('#menu-mobile');
 
@@ -13,6 +14,7 @@ const $$ = document.querySelectorAll.bind(document);
   };
 
   menuOpen.addEventListener("click", onToogleMenu);
+  menuOpenScroll.addEventListener("click", onToogleMenu);
   menuClose.addEventListener("click", onToogleMenu);
 })();
 

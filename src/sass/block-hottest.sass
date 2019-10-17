@@ -1,8 +1,11 @@
 .hottest
-  padding: 4.2rem $padding 5rem
+  padding: 4.2rem $padding-mobile 5rem
 
   @media #{$media-sm-plus-up}
-    padding: 8rem $padding
+    padding: 8rem $padding 0
+
+  &__title
+    margin-bottom: 3.8rem
 
   &__content
     display: flex
@@ -24,7 +27,9 @@
 
     &__text
      @media #{$media-sm-plus-up}
-      margin-top: 1.5rem
+      margin-top: 1.7rem
+      font-size: 1.4rem
+      line-height: 1.3em
 
     &__image-text
       font-family: $font-family_yesteryear, cursive
@@ -33,7 +38,7 @@
       color: $color_white
 
     &__image-wrap
-      height: 36.7rem
+      height: 37.6rem
       background: url('/img/block-hottest/card-img1.jpg') no-repeat center center / cover
       display: flex
       align-items: center
@@ -47,7 +52,7 @@
         background: url('/img/block-hottest/card-img3.jpg') no-repeat center center / cover
 
     &__wrap
-      margin-bottom: 3rem
+      margin-bottom: 4.4rem
       margin-right: 0
 
       @media #{$media-sm-plus-up}
@@ -83,7 +88,7 @@
 
           @media #{$media-sm-plus-up}
             flex-basis: initial
-            height: 36.7rem
+            height: 37.6rem
 
         .hottest-card-big__content
           flex-basis: 70%
@@ -98,7 +103,9 @@
 
           @media #{$media-sm-plus-up}
             display: block
-            margin-top: 1.5rem
+            margin-top: 1.7rem
+            font-size: 1.4rem
+            line-height: 1.3em
 
         .hottest-card-big__image-text
           display: none
