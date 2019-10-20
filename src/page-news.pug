@@ -3,10 +3,10 @@ extends partials/layout
 include partials/mixins
 
 block vars
-  - var title = "DietZones.com"
+  - var title = "News - DietZones.com";
   -
     var news = {
-      path: '/img/page/news-img_main',
+      path: '/img/page/news-img',
       alt: 'WORKOUT CLOTHES',
       title: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
       text: 'When we look for workout clothes, we have a few nonnegotiable requirements. The pieces have to be functional, and they have to look good. Otherwise, what\'s the point? Outdoor Voices has been one of our go-to brands since it was founded in 2014 — it makes clothes you want to live your life in, whether you\'re heading to dance class or just taking the dog for a walk.',
@@ -18,11 +18,26 @@ block vars
 
 block content
   include partials/menu-mobile
-  include partials/block-main
-  .news__wrap
+  include partials/navigation-page
+
+  section.blog
+    .blog__header
+      .blog__title-wrap
+        h2.blog__title News
+
+      include partials/block-page-tag
+    .news__wrap
       +block-news-full(news)
 
-  include partials/block-editors
-  include partials/block-slider
-  include partials/block-hottest
-  include partials/block-know
+    div
+      include partials/block-news-content
+
+    .blog__footer
+      img.editors__footer-more(src='/img/icons/more.svg', alt='Show more')
+    
+    include partials/block-pagination
+
+  .blog__updates-mobile
+    +block-updates()
+
+  include partials/block-page-hottest

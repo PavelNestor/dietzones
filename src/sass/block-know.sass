@@ -52,9 +52,11 @@
     &__wrap
       width: 100%
       margin-bottom: 6.4rem
+      margin-right: 0
 
       @media #{$media-sm-plus-up}
         width: calc(50% - 5rem)
+        margin-right: 5rem
 
       &:hover
         .know-slide__image-text
@@ -73,6 +75,8 @@
 
         @media #{$media-sm-plus-up}
           display: flex
+          flex-direction: column
+          margin-right: 5rem
 
     &__image-wrap
       align-items: flex-end
@@ -159,6 +163,14 @@
       display: block
       width: fit-content
       font-size: 1.2rem
+      background-image: linear-gradient(to right, $color_white 0%, $color_white 35%, $color_accent 70%, $color_accent 100%)
+      background-size: 300%
+      transition: .5s
+
+      &:hover
+        background-position: right center
+        color: $color_white
+        box-shadow: inset 0 0 2px 1px $color_white
 
     &__footer
       display: flex

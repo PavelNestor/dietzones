@@ -15,7 +15,7 @@ mixin card-main(card)
     .card-main__img
       +pictureJpg(card.path, card.alt)
     .card-main__title-wrap
-      a(href="#").card-main__title= card.title
+      a(href="page-article.html").card-main__title= card.title
     .card-main__subtitle= card.subtitle
     +card-footer(card.date, card.looks, card.comments)
 
@@ -45,7 +45,7 @@ mixin card-editors(options)
     .editors-card__image-wrap
       +pictureJpg(options.path, options.alt)(class='object-position-top')
     .editors-card__content
-      a(href="#").editors-card__title= options.title
+      a(href="page-article.html").editors-card__title= options.title
       .editors-card__subtitle= options.subtitle
       +card-footer(options.date, options.looks, options.comments)
 
@@ -58,7 +58,7 @@ mixin card-editors-big(options)
         = options.imgText2
 
     .editors-card__content
-      a(href="#").editors-card__title= options.title
+      a(href="page-article.html").editors-card__title= options.title
       .editors-card__text.card-footer__text.editors-card-big__text= options.text
       .editors-card__subtitle= options.subtitle
       +card-footer(options.date, options.looks, options.comments)
@@ -73,7 +73,7 @@ mixin card-hottest-big(options)
           = options.imgText2
 
       .editors-card__content.hottest-card-big__content
-        a(href="#").editors-card__title.hottest-card-big__title= options.title
+        a(href="page-article.html").editors-card__title.hottest-card-big__title= options.title
         .editors-card__text.card-footer__text.hottest-card-big__text= options.text
 
     .hottest-card-big__footer
@@ -88,7 +88,7 @@ mixin card-know-big(options)
           .hottest-card-big__image-text.know-slide__image-text= options.imgText
 
       .editors-card__content.hottest-card-big__content
-        a(href="#").editors-card__title.hottest-card-big__title= options.title
+        a(href="page-article.html").editors-card__title.hottest-card-big__title= options.title
         .editors-card__text.card-footer__text.hottest-card-big__text= options.text
 
     .hottest-card-big__footer
@@ -101,14 +101,14 @@ mixin block-slider-card (options)
       .card-slider__image
         +pictureJpg(options.path, options.alt)
       .card-slider__description
-        a(href="#").card-slider__description-content= options.description
+        a(href="page-article.html").card-slider__description-content= options.description
 
 mixin card-know(options)
   .know-card
     .know-card__image-wrap
       +pictureJpg(options.path, options.alt)(class='object-position-top')
     .know-card__content
-      a(href="#").know-card__title= options.title
+      a(href="page-article.html").know-card__title= options.title
       .know-card__subtitle= options.subtitle
       +card-footer(options.date, options.looks, options.comments)
 
@@ -126,7 +126,7 @@ mixin card-know-events(options)
         .editors-card__text.card-footer__text.hottest-card-big__text= options.text
 
     .know-card__footer
-      a(href="#").know-card__button Pre-Recorded Webinars
+      a(href="page-article.html").know-card__button Pre-Recorded Webinars
 
 mixin block-updates()
   .updates
@@ -138,3 +138,20 @@ mixin block-updates()
     form.updates__form
       input.updates__input(type="text", placeholder='Enter your email')
       button.updates__btn(type="submit", value='ok') ok
+
+mixin block-news-full(options)
+  .news
+    .news__col
+      .news__img
+        +picturePng(options.path, options.alt='')
+    .news__col
+      h3.news__title= options.title
+      .editors-card__text.news__text= options.text
+      .editors-card__subtitle.news__subtitle= options.subtitle
+      +card-footer(options.date, options.looks, options.comments)
+
+mixin line-with-dot()
+  .line-with-dot__wrapper
+    .line-with-dot__line
+    .line-with-dot
+    .line-with-dot__line

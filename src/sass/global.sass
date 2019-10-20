@@ -77,11 +77,21 @@ h2
   font-size: 3rem
   line-height: 1em
   color: $color_main
+  font-weight: normal
 
   @media #{$media-sm-plus-up}
     font-size: 4rem
 
 h3
+  font-family: $font-family_accent, sans-serif
+  font-size: 2rem
+  line-height: 1em
+  color: $color_main
+  font-weight: normal
+
+  @media #{$media-sm-plus-up}
+    font-size: 3rem
+
 h4
 h5
 h6
@@ -307,7 +317,7 @@ input[type='number']
       display: flex
       height: 5.5rem
       justify-content: center
-      left: calc(#{$padding-mobile} - 4.1rem)
+      left: .8rem
       position: absolute
       top: 15.2rem
       width: 5.5rem
@@ -324,7 +334,7 @@ input[type='number']
         transform: scale(1.2)
 
       &_next
-        left: calc(100vw - #{$padding-mobile} - 2.7rem)
+        left: calc(100vw - 6.3rem)
 
         @media #{$media-sm-plus-up}
           left: calc(100vw - #{$padding} - 2.7rem)
@@ -529,6 +539,27 @@ input[type='number']
       font-size: 1.2rem
       line-height: 1.1em
       color: $color_white
+
+.line-with-dot
+  position: relative
+  content: ''
+  width: .5rem
+  height: .5rem
+  border-radius: 50%
+  border: 1px solid $color_main
+
+  &__wrapper
+    display: flex
+    width: 100%
+    align-items: center
+    justify-content: center
+    padding: 1rem 0 3rem
+  
+  &__line
+    height: 1px
+    width: 8rem
+    background: $color_main
+    margin: 0 .5rem
 
 //helpers
 .object-position-top

@@ -1,0 +1,123 @@
+// page BLOG
+.blog
+  &__title-wrap
+    position: relative
+
+    &::before
+      position: absolute
+      content: ''
+      border: 1px solid $color_accent
+      border-radius: 50%
+      width: 2rem
+      height: 2rem
+      top: calc( 50% - 1rem )
+      left: calc( #{ - $padding-mobile} / 2 - 1rem)
+      background: url('/img/icons/arrow_blue.svg') no-repeat center center / 60%
+
+      @media #{$media-sm-plus-up}
+        top: calc( 50% - 1.7rem )
+        left: calc( #{ - $padding} / 2 - 1.7rem)
+        width: 3.5rem
+        height: 3.5rem
+
+  &__header
+    padding: 0 $padding-mobile
+
+    @media #{$media-sm-plus-up}
+      padding: 0 $padding
+
+
+  &__content
+    padding: 5.2rem $padding-mobile 0
+    display: flex
+    flex-direction: column
+
+    @media #{$media-sm-plus-up}
+      padding: 5.2rem $padding 0
+      flex-direction: row
+
+  &__col
+
+    .hottest-card-big__wrap:last-of-type
+      margin-right: 0
+
+      @media #{$media-sm-plus-up}
+        margin-right: 5rem
+
+    &:nth-child(3)
+      .hottest-card-big__wrap
+        margin-right: 0
+
+  &__footer
+    display: flex
+    justify-content: center
+
+// page NEWS
+.news
+  display: flex
+  flex-direction: column
+
+  @media #{$media-sm-plus-up}
+    flex-direction: row
+
+  &__wrap
+    padding: 0
+    @media #{$media-sm-plus-up}
+      padding: 0 0 0 $padding
+
+  &__col
+    &:nth-child(1)
+      flex-basis: 40%
+
+    &:nth-child(2)
+      flex-basis: 60%
+      padding: 3rem $padding-mobile
+      background: $color_light
+
+      @media #{$media-sm-plus-up}
+        padding: 5rem $padding 5rem 5rem
+
+  &__updates-mobile
+    display: flex
+
+    @media #{$media-sm-plus-up}
+      display: none
+
+  &__desktop
+    display: none
+
+    @media #{$media-sm-plus-up}
+      display: flex
+
+.tag
+  display: block
+  background: $color_light
+  padding: .6rem
+  margin: .5rem
+  text-transform: uppercase
+  color: #000
+  font-family: $font-family
+  font-size: 1.2rem
+  line-height: 1.3em
+  transition: .3s
+
+  &:hover
+    background: darken($color_light, 5%)
+
+  &_active
+    background: $color_accent
+    color: $color_white
+
+    &:hover
+      background: darken($color_accent, 5%)
+
+  &__wrap
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    width: 100%
+    justify-content: center
+    margin-bottom: 3rem
+
+    @media #{$media-sm-plus-up}
+      margin-bottom: 5rem

@@ -1,0 +1,48 @@
+include mixins
+
+-
+  var cards = [
+    {
+      path: '/img/block-editors/card-img1',
+      alt: 'Nutrient type and timing for optimal exercise output',
+      title: 'Nutrient type and timing for optimal exercise output',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
+    {
+      path: '/img/block-know/card-sm-2',
+      alt: 'Nutrient type and timing for optimal exercise output',
+      title: 'Nutrient type and timing for optimal exercise output',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
+    {
+      path: '/img/block-editors/card-img4',
+      alt: 'Nutrient type and timing for optimal exercise output',
+      title: 'Nutrient type and timing for optimal exercise output',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
+  ];
+
+section.page-hottest
+
+  .page-hottest__header
+    h2
+      | This week’s
+      br
+      | hottest
+
+  .page-hottest__content
+    .page-hottest__col
+      each card in cards
+        .page-hottest__item
+          +card-know(card)
+
+    include block-slider
