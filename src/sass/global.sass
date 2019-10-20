@@ -93,6 +93,15 @@ h3
     font-size: 3rem
 
 h4
+  font-family: $font-family_accent, sans-serif
+  font-size: 2rem
+  line-height: 1em
+  color: $color_main
+  font-weight: normal
+
+  @media #{$media-sm-plus-up}
+    font-size: 2rem
+
 h5
 h6
 
@@ -247,13 +256,14 @@ input[type='number']
   margin: 0
 
   &__item
-    background: url(/img/icons/list-img.svg) no-repeat left 1px
-    font-size: 1.4rem
-    line-height: 1.4em
+    background: url(/img/icons/list-img.svg) no-repeat left 6px
+    color: $color_main
+    font-family: $font-family
+    font-size: 1,6rem
+    line-height: 1.3em
     margin-bottom: 1.2rem
     margin-left: -0.1rem
     padding-left: 3.2rem
-    color: $color_main
 
     @media #{$media-sm-plus-up}
       margin-left: 0.5rem

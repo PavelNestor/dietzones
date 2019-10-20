@@ -1,0 +1,95 @@
+include mixins
+
+- 
+  var cards = [
+    {
+      path: '/img/block-editors/card-img4',
+      alt: 'Nutrient type and timing for optimal exercise output',
+      title: 'Nutrient type and timing for optimal exercise output',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
+    {
+      path: '/img/block-editors/card-img1',
+      alt: 'Nutrient type and timing for optimal exercise output',
+      title: 'Nutrient type and timing for optimal exercise output',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
+    {
+      path: '/img/block-know/card-sm-2',
+      alt: 'Nutrient type and timing for optimal exercise output',
+      title: 'Nutrient type and timing for optimal exercise output',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
+    {
+      path: '/img/block-editors/card-img4',
+      alt: 'Nutrient type and timing for optimal exercise output',
+      title: 'Nutrient type and timing for optimal exercise output',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
+  ];
+
+section.article
+  .article
+    .article__header
+      +picturePng('/img/page/article', '')
+
+    .article__content
+      .article__col
+        .article__col_content
+          h2 The Athleisure Brand You've Seen All Over Instagram Makes the Most Flattering Workout Clothes
+
+          .article__subtitle As POPSUGAR editors, we independently select and write about stuff we love and think you'll like too. POPSUGAR has affiliate and advertising partnerships so we get revenue from sharing this content and from your purchase.
+
+          .article__line-wrap
+            +line-with-dot()
+
+          p.article__text When we look for workout clothes, we have a few nonnegotiable requirements. The pieces have to be functional, and they have to look good. Otherwise, what's the point? Outdoor Voices has been one of our go-to brands since it was founded in 2014 — it makes clothes you want to live your life in, whether you're heading to dance class or just taking the dog for a walk. With clothes made of comfortable materials in cool colorways, the brand has created something for everyone, and there's nothing not to love. If you've spotted the brand on Instagram, but are unsure of where to start, let us be your guide.
+
+          h3 Ayurvedic Medicines Have Side Effects
+
+          p.article__text Right now, the only thing we want to be shopping is Outdoor Voices workout clothes. The clothes are the perfect mix of on-trend and timeless, and they can be worn everywhere from the gym to brunch. Basically, we'd like our entire wardrobe to consist of Outdoor Voices, and if you feel the same, keep reading to shop our picks.
+
+          h4 Seasons Affect The Doshas And Your Health
+
+          p.article__text Right now, the only thing we want to be shopping is Outdoor Voices workout clothes. The clothes are the perfect mix of on-trend and timeless, and they can be worn everywhere from the gym to brunch. Basically, we'd like our entire wardrobe to consist of Outdoor Voices, and if you feel the same, keep reading to shop our picks.
+
+          .image-holder
+            +picturePng('/img/page/article-2', '')
+
+          .article__img-text The pieces have to be functional, and they have to look good. Otherwise, what's the point?
+
+          p.article__text When we look for workout clothes, we have a few nonnegotiable requirements. The pieces have to be functional, and they have to look good. Otherwise, what's the point? Outdoor Voices has been one of our go-to brands since it was founded in 2014 — it makes clothes you want to live your life in, whether you're heading to dance class or just taking the dog for a walk. With clothes made of comfortable materials in cool colorways, the brand has created something for everyone, and there's nothing not to love. If you've spotted the brand on Instagram, but are unsure of where to start, let us be your guide.
+
+          ul.list
+            li.list__item When we look for workout clothes, we have a few nonnegotiable requirements. 
+            li.list__item The pieces have to be functional, and they have to look good. Otherwise, what's the point?
+            li.list__item Outdoor Voices has been one of our go-to brands since it was founded in 2014 — it makes clothes you want to live your life in, whether you're heading to dance class or just taking the dog for a walk.
+            li.list__item With clothes made of comfortable materials in cool colorways, the brand has created something for everyone, and there's nothing not to love. If you've spotted the brand on Instagram, but are unsure of where to start, let us be your guide.
+
+          p.article__text Right now, the only thing we want to be shopping is Outdoor Voices workout clothes. The clothes are the perfect mix of on-trend and timeless, and they can be worn everywhere from the gym to brunch. Basically, we'd like our entire wardrobe to consist of Outdoor Voices, and if you feel the same, keep reading to shop our picks.
+
+          .editors-card__subtitle.news__subtitle WORKOUT CLOTHES
+          +card-footer('14:51 20.09.2019', '254', '2')
+
+        include block-page-newpost
+
+      .article__col
+        +block-updates()
+
+        .know__title-top-wrap
+          h2.know__title-top Top 3
+
+        each card in cards
+          +card-know(card)
