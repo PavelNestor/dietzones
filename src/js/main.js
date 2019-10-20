@@ -217,3 +217,8 @@ document.addEventListener('DOMContentLoaded', ready);
 window.addEventListener('scroll', handleScrollBehavior);
 window.addEventListener('resize', handleSliderChange);
 window.addEventListener('resize', handleBlockSliderChange);
+
+new WOW({
+  boxClass: "wow",
+  animateClass: "rotate-in-x"
+}).init();

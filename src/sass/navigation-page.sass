@@ -29,6 +29,15 @@
     display: flex
     align-items: center
     justify-content: space-between
+    width: 100%
+
+    @media #{$media-sm-plus-up}
+      width: fit-content
+
+  &__logo-wrap
+    width: 100%
+    text-align: center
+    display: block
 
   &__btn-signin
     display: none

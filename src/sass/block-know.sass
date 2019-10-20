@@ -52,9 +52,11 @@
     &__wrap
       width: 100%
       margin-bottom: 6.4rem
+      margin-right: 0
 
       @media #{$media-sm-plus-up}
         width: calc(50% - 5rem)
+        margin-right: 5rem
 
       &:hover
         .know-slide__image-text
@@ -73,6 +75,8 @@
 
         @media #{$media-sm-plus-up}
           display: flex
+          flex-direction: column
+          margin-right: 5rem
 
     &__image-wrap
       align-items: flex-end
