@@ -123,10 +123,8 @@ section.article
         .newpost_small
           include block-page-newpost
 
-        +block-updates()
-
-        .know__title-top-wrap
-          h2.know__title-top Top 3
+        .article__update
+          +block-updates()
 
         each card in cards
           +card-know(card)

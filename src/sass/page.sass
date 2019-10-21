@@ -2,6 +2,10 @@
 .blog
   &__title-wrap
     position: relative
+    padding-top: 1rem
+
+    @media #{$media-sm-plus-up}
+      padding-top: 3.9rem
 
     &::before
       position: absolute
@@ -15,10 +19,16 @@
       background: url('/img/icons/arrow_blue.svg') no-repeat center center / 60%
 
       @media #{$media-sm-plus-up}
-        top: calc( 50% - 1.7rem )
-        left: calc( #{ - $padding} / 2 - 1.7rem)
-        width: 3.5rem
-        height: 3.5rem
+        top: 50%
+        left: calc( #{ - $padding} / 2 - 2.1rem)
+        width: 3.3rem
+        height: 3.3rem
+
+  &__title
+    margin-bottom: 3rem
+
+    @media #{$media-sm-plus-up}
+      margin-bottom: 4rem
 
   &__updates-mobile
     display: block
@@ -161,6 +171,7 @@
     font-size: 1.6rem
     line-height: 1.3em
     color: $color_main
+    margin-bottom: 3rem
 
   &__img-text
     font-family: $font-family_lora
@@ -170,6 +181,7 @@
     margin-left: 2.8rem
     position: relative
     margin-top: 2rem
+    margin-bottom: 3rem
 
     &::before
       position: absolute
@@ -186,13 +198,13 @@
       flex-basis: 67%
 
       @media #{$media-sm-plus-up}
-        padding: 5rem 5rem 5rem 0
+        padding: 4.9rem 2rem 5rem .4rem
 
     &:nth-child(2)
       display: none
 
       @media #{$media-sm-plus-up}
-        padding: 5rem 0 0
+        padding: 5rem 0 0 3rem
         flex-basis: 33%
         display: block
 
@@ -202,6 +214,9 @@
 
       @media #{$media-sm-plus-up}
         padding-left: $padding
+
+  &__update
+    margin-bottom: 5rem
 
   &__more
     display: flex
