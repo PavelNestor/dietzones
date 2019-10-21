@@ -94,7 +94,7 @@ h3
 
 h4
   font-family: $font-family_accent, sans-serif
-  font-size: 2rem
+  font-size: 1rem
   line-height: 1em
   color: $color_main
   font-weight: normal
@@ -191,8 +191,8 @@ input[type='number']
   img
     object-fit: cover
     vertical-align: middle
-    height: 100%
-    width: auto
+    height: auto
+    width: 100%
 
   .fake-img
     opacity: 0
@@ -485,6 +485,49 @@ input[type='number']
       color: $color_main
       border: 1px solid $color_main
 
+
+.social-btn
+  width: 4rem
+  height: 4rem
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 1rem
+  margin-right: 2px
+  margin-bottom: 0
+  border-radius: 50%
+
+  @media #{$media-md-up}
+    margin-bottom: 2px
+
+  &_fb
+    background: #3A559F
+
+  &_twitter
+    background: #55ACEE
+
+  &_telegram
+    background: #41B4E6
+
+  &__wrap
+    display: flex
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    padding: 0 5rem 5rem 0
+
+  &__item
+    display: flex
+    align-items: center
+    margin-right: 2rem
+
+  &__text
+    font-family: $font-family, sans-serif
+    font-size: 1.6rem
+    line-height: 1.3em
+    color: $color_main
+    margin: 0 0.5rem
+
 .updates
   background: url("/img/icons/mail_white.svg") no-repeat calc(100% + 1.6rem) 3.5rem/ 5.6rem auto, $color_gradient
   padding: 3rem 6.1rem 3rem 3.3rem
@@ -570,6 +613,34 @@ input[type='number']
     width: 8rem
     background: $color_main
     margin: 0 .5rem
+
+.user-card
+  display: flex
+  align-items: center
+  margin-bottom: 3rem
+
+  &__col
+  &__img
+    display: inline-block
+    width: 10rem
+    height: 10rem
+    border-radius: 50%
+    object-fit: cover
+    margin-right: 2.5rem
+
+  &__name
+    font-family: $font-family_lora
+    font-size: 2rem
+    line-height: 1.3em
+    color: $color_main
+
+  &__posts
+    font-family: $font-family
+    font-weight: bold
+    font-size: 1.2rem
+    line-height: 1.3em
+    text-transform: uppercase
+    color: $color_accent
 
 //helpers
 .object-position-top

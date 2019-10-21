@@ -65,9 +65,17 @@
     display: flex
     align-items: center
     justify-content: center
+    white-space: nowrap
 
   &__text
     font-family: $font-family, sans-serif
     font-size: 1.6rem
     line-height: 1.3em
     color: $color_border
+
+  &_small
+    margin-bottom: 5rem
+
+    .newpost__content
+      flex-direction: column
+      text-align: center

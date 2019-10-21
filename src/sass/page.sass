@@ -20,6 +20,12 @@
         width: 3.5rem
         height: 3.5rem
 
+  &__updates-mobile
+    display: block
+
+    @media #{$media-sm-plus-up}
+      display: none
+
   &__header
     padding: 0 $padding-mobile
 
@@ -87,7 +93,7 @@
     display: none
 
     @media #{$media-sm-plus-up}
-      display: flex
+      display: block
 
 .tag
   display: block
@@ -132,7 +138,12 @@
     background: $color_white
     z-index: 1
     position: relative
-    margin: -15rem $padding 0
+    margin: 0 $padding_mobile 0
+    flex-direction: column
+
+    @media #{$media-sm-plus-up}
+      flex-direction: row
+      margin: -15rem $padding 0
 
   &__subtitle
     font-family: $font-family_lora
@@ -171,13 +182,34 @@
 
   &__col
     &:nth-child(1)
-      padding: 5rem 5rem 5rem 0
+      padding: 5rem 0 0
       flex-basis: 67%
 
+      @media #{$media-sm-plus-up}
+        padding: 5rem 5rem 5rem 0
+
     &:nth-child(2)
-      padding: 5rem 0 0
-      flex-basis: 33%
+      display: none
+
+      @media #{$media-sm-plus-up}
+        padding: 5rem 0 0
+        flex-basis: 33%
+        display: block
 
     &_content
-      padding-left: $padding
+      padding-left: 0
       margin-bottom: 8rem
+
+      @media #{$media-sm-plus-up}
+        padding-left: $padding
+
+  &__more
+    display: flex
+    justify-content: center
+    width: 100%
+
+    &_comments
+      margin: 0
+
+      &-big
+        margin-top: 2.8rem

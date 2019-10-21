@@ -1,0 +1,130 @@
+.comments
+  padding: 8rem 0 0
+
+  @media #{$media-sm-plus-up}
+    padding: 4rem 0 0
+
+  &__title
+    text-align: center
+    width: 100%
+    padding: 4rem 0
+
+    @media #{$media-sm-plus-up}
+      padding: 8rem 0
+
+  &__form
+    background: $color_light
+    padding: .5rem 2.5rem 1.5rem
+    margin: 1.6rem calc(-#{$padding-mobile})
+
+    @media #{$media-sm-plus-up}
+      margin: 1.6rem 0
+
+    input
+      background: transparent
+
+.user-comment
+  display: flex
+  margin-bottom: 1rem
+  flex-direction: column
+
+  @media #{$media-sm-plus-up}
+    flex-direction: row
+
+  &__col
+    &:nth-child(2)
+      background: $color_light
+      padding: 1.6rem 2.5rem
+      position: relative
+
+      &::before
+        position: absolute
+        width: 2rem
+        height: 2rem
+        transform: rotate(45deg)
+        background: $color_light
+        top: -0.5rem
+        left: 2rem
+        content: ''
+
+        @media #{$media-sm-plus-up}
+          top: 2rem
+          left: -0.5rem
+
+  &__header
+    display: flex
+    justify-content: space-between
+    margin-bottom: 1rem
+
+  &__name
+    font-family: $font-family_lora
+    font-size: 1.6rem
+    line-height: 1.3em
+    color: $color_main
+
+  &__date
+    font-family: $font-family_roboto
+    font-size: 1.2rem
+    line-height: 1.4em
+    color: $color_card_footer
+    margin-left: 1rem
+
+  &__text
+    font-family: $font-family
+    font-size: 1.4rem
+    line-height: 1.3em
+    color: $color_main
+
+  &__reply
+    &-text
+      font-family: $font-family_roboto
+      font-size: 1.2rem
+      line-height: 1.4em
+      color: $color_accent
+      margin-right: 1rem
+
+    &-btn
+      font-family: $font-family_roboto
+      font-size: 1.2rem
+      line-height: 1em
+      color: $color_accent
+      border: 1px solid $color_accent
+      border-radius: 50%
+      width: 1.4rem
+      height: 1.4rem
+      display: flex
+      align-items: center
+      justify-content: center
+      padding: 0
+      margin-right: .5rem
+      background: transparent
+      cursor: pointer
+      transition: .4s
+
+      &:hover
+        transform: scale(1.2)
+        box-shadow: inset 0px 0px 1rem .2rem $color_accent
+        color: $color_white
+
+    &-wrap
+      display: flex
+      align-items: baseline
+
+  &__title
+    &-wrap
+      display: flex
+      align-items: baseline
+
+  &__img
+    width: 6rem
+    height: 6rem
+    margin-right: 0
+    margin-bottom: 2.2rem
+
+    @media #{$media-sm-plus-up}
+      margin-bottom: 0
+      margin-right: 2.2rem
+
+  &:nth-child(2n + 2)
+    margin-left: $padding/2
+

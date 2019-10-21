@@ -38,6 +38,15 @@ include mixins
       looks: '254',
       comments: '2'
     },
+    {
+      path: '/img/block-editors/card-img2',
+      alt: 'Nutrient type and timing for optimal exercise output',
+      title: 'Nutrient type and timing for optimal exercise output',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
   ];
 
 section.article
@@ -85,7 +94,35 @@ section.article
 
         include block-page-newpost
 
+        include block-comments
+
       .article__col
+        .social-btn__wrap
+          .social-btn__item
+            a.social-btn.social-btn_fb(href="#")
+              img(src='/img/icons/fb_white.svg', alt="Facebook")
+            p.social-btn__text 25
+          .social-btn__item
+            a.social-btn.social-btn_twitter(href="#")
+              img(src='/img/icons/twitter_white.svg', alt="Facebook")
+            p.social-btn__text 54
+          .social-btn__item
+            a.social-btn.social-btn_telegram(href="#")
+              img(src='/img/icons/telegram.svg', alt="Facebook")
+            p.social-btn__text 36
+
+        .user-card
+          .user-card__col
+            .user-card__img
+              +pictureJpg('/img/page/user')
+
+          .user-card__col
+            .user-card__name Philippa (Pippa)
+            .user-card__posts Show all posts
+
+        .newpost_small
+          include block-page-newpost
+
         +block-updates()
 
         .know__title-top-wrap
@@ -93,3 +130,9 @@ section.article
 
         each card in cards
           +card-know(card)
+
+        .article__more
+          img.editors__footer-more(src='/img/icons/more.svg', alt='Show more')
+
+    .blog__updates-mobile
+      +block-updates()
