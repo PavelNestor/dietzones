@@ -388,12 +388,14 @@ input[type='number']
     line-height: 1em
 
 .card-main
-  width: 30.9rem
+  min-width: 30.9rem
+  max-width: 30.9rem
   margin-right: 1px
   display: inline-block
 
   @media #{$media-sm-plus-up}
-    width: 36rem
+    max-width: 36rem
+    min-width: 36rem
 
   &__img
     height: 31rem
