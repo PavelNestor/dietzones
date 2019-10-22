@@ -1,0 +1,23 @@
+include mixins
+
+.modal
+  .modal__col
+    +pictureJpg('/img/modal/modal')
+
+  .modal__col
+    .updates.modal__updates
+      .updates__title.modal__title
+        | Want to
+        br
+        | receive
+        br
+        | updates?
+
+      .updates__subtitle.modal__subtitle Subscribe to the diet newsletter
+
+      form.updates__form
+        input.updates__input(type="text", placeholder='Enter your email')
+        button.updates__btn(type="submit", value='ok') ok
+
+      .modal__close-wrap
+        button.modal__close close

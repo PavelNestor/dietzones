@@ -36,9 +36,16 @@
     justify-content: center
     padding: 3rem 1rem 5rem
 
+    @media #{$media-sm-plus-up}
+      padding: 0
+
   &__content
     display: flex
     padding: 0 1rem
+    justify-content: center
+
+    @media #{$media-sm-plus-up}
+      padding: 0 calc(#{$padding} * 2)
 
   &__col
     align-items: center
@@ -58,8 +65,14 @@
     margin: 0
     padding: 0
 
+    @media #{$media-sm-plus-up}
+      font-size: 3rem
+
   &__footer
     padding: 0 3.3rem
+
+    @media #{$media-sm-plus-up}
+      padding: 0 calc(#{$padding} * 3)
 
     &-title
       font-family: $font-family_accent, sans-serif
@@ -136,3 +149,16 @@
     display: flex
     justify-content: space-between
     align-items: center
+    flex-direction: column
+
+    @media #{$media-sm-plus-up}
+      flex-direction: row
+
+    &-left
+      display: flex
+      justify-content: space-between
+      width: 100%
+      padding-right: 1rem
+
+      @media #{$media-sm-plus-up}
+        padding-right: 2rem

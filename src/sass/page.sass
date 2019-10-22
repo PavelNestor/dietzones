@@ -76,6 +76,13 @@
   @media #{$media-sm-plus-up}
     flex-direction: row
 
+  &__img
+    .cover
+      width: 100%
+      object-fit: cover
+      object-position: center
+      height: 50rem
+
   &__wrap
     padding: 0
     @media #{$media-sm-plus-up}
@@ -83,10 +90,10 @@
 
   &__col
     &:nth-child(1)
-      flex-basis: 40%
+      flex-basis: 50rem
 
     &:nth-child(2)
-      flex-basis: 60%
+      flex-basis: calc(100% - 50rem)
       padding: 3rem $padding-mobile
       background: $color_light
 
