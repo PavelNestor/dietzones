@@ -40,14 +40,31 @@ include mixins
     },
   ];
 
-section.container.main
-  h1.title_news DietZones.com
+section.main
+  .main__header
+    img#menu-open.navbar__burger(src="/img/icons/burger.svg", alt="Open menu")
+    a(href="index.html").main__logo-wrap
+      img.main__logo(src="/img/big-logo.svg", alt="DietZones.com logo")
 
-  .slider-wrapper
-    ul#main-slider.slider(data-target="carousel")
-      each card in cards
-        +card-main(card)
+    .main__header-btn-wrap
+      img.navbar__search(src="/img/icons/search.svg", alt="search")
+      a.main-btn.main-btn_accent-outline.navbar__btn-signup(href="#") Sign up
+      a.main-btn.main-btn_black.navbar__btn-signin(href="#") Sign in
 
-    .slider__button-wrapper
-      button(data-action='slideLeft') L
-      button(data-action='slideRight') R
+  .main__menu
+    include menu
+
+  .main__content
+    .slider-wrapper
+      ul#main-slider.slider(data-target="carousel")
+        each card in cards
+          +card-main(card)
+
+      +slider-btn-prev('slideLeft')
+      +slider-btn-next('slideRight')
+
+      .slider__pagination
+        span.paginatecircle.paginatecircle_active(data-index=0)
+        span.paginatecircle(data-index=1)
+        span.paginatecircle(data-index=2)
+        span.paginatecircle(data-index=3)

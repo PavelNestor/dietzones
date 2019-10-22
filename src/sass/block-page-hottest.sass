@@ -1,0 +1,29 @@
+.page-hottest
+  &__header
+    padding: 1rem $padding-mobile
+
+    @media #{$media-sm-plus-up}
+      padding: 1rem $padding 1.8rem
+
+  &__content
+  &__col
+    display: flex
+    justify-content: space-between
+
+    &:nth-child(1)
+      padding: 0 $padding-mobile
+      display: flex
+      flex-wrap: wrap
+
+      @media #{$media-sm-plus-up}
+        padding: 0 $padding
+
+    &:nth-child(2)
+      overflow-x: hidden
+      padding-bottom: 10rem
+
+  &__item
+    flex-basis: 100%
+
+    @media #{$media-sm-plus-up}
+      flex-basis: 30%

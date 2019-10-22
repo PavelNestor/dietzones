@@ -1,0 +1,52 @@
+include mixins
+
+-
+  var cardsBig = [
+    {
+      path: '/img/block-editors/big-card-img1',
+      alt: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      title: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      text: 'Walking is a great form of physical activity that\'s free, low risk and easy to do. Importantly, it can also help you lose weight and belly fat.',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2'
+    },
+    {
+      path: '/img/block-editors/big-card-img1',
+      alt: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      title: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      text: 'Walking is a great form of physical activity that\'s free, low risk and easy to do. Importantly, it can also help you lose weight and belly fat.',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2',
+      class: 'hottest-card-big__image-wrap_two'
+    },
+    {
+      path: '/img/block-editors/big-card-img1',
+      alt: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      title: 'The Athleisure Brand You\'ve Seen All Over Instagram Makes the Most Flattering Workout Clothes',
+      text: 'Walking is a great form of physical activity that\'s free, low risk and easy to do. Importantly, it can also help you lose weight and belly fat.',
+      subtitle: 'WORKOUT CLOTHES',
+      date: '14:51 20.09.2019',
+      looks: '254',
+      comments: '2',
+      imgText1: 'Flattering',
+      imgText2: 'Workout Clothes',
+      class: 'hottest-card-big__image-wrap_three'
+    },
+  ];
+
+section.hottest
+  h2.hottest__title
+    | This week’s
+    br
+    | hottest
+
+  .hottest__content
+    each card in cardsBig
+      +card-hottest-big(card)
+
+  .hottest__footer
+    img.editors__footer-more(src='/img/icons/more.svg', alt='Show more')

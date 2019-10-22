@@ -71,9 +71,37 @@ h1, h2, h3, h4, h5, h6
     margin-top: 0
 
 h1
+
 h2
+  font-family: $font-family_accent, sans-serif
+  font-size: 3rem
+  line-height: 1em
+  color: $color_main
+  font-weight: normal
+
+  @media #{$media-sm-plus-up}
+    font-size: 4rem
+
 h3
+  font-family: $font-family_accent, sans-serif
+  font-size: 2rem
+  line-height: 1em
+  color: $color_main
+  font-weight: normal
+
+  @media #{$media-sm-plus-up}
+    font-size: 3rem
+
 h4
+  font-family: $font-family_accent, sans-serif
+  font-size: 1.8rem
+  line-height: 1em
+  color: $color_main
+  font-weight: normal
+
+  @media #{$media-sm-plus-up}
+    font-size: 2rem
+
 h5
 h6
 
@@ -163,8 +191,8 @@ input[type='number']
   img
     object-fit: cover
     vertical-align: middle
-    height: 100%
-    width: auto
+    height: auto
+    width: 100%
 
   .fake-img
     opacity: 0
@@ -226,22 +254,27 @@ input[type='number']
 
 .list
   margin: 0
+  margin-bottom: 3rem
 
   &__item
-    background: url(/img/icons/list-img.svg) no-repeat left 1px
-    font-size: 1.4rem
-    line-height: 1.4em
+    background: url(/img/icons/list-img.svg) no-repeat left 6px
+    color: $color_main
+    font-family: $font-family
+    font-size: 1.6rem
+    line-height: 1.3em
     margin-bottom: 1.2rem
     margin-left: -0.1rem
     padding-left: 3.2rem
-    color: $color_main
 
     @media #{$media-sm-plus-up}
       margin-left: 0.5rem
       margin-bottom: 1.1rem
 
 .container
-  margin-left: 7.6vw
+  margin-left: $padding-mobile
+
+  @media #{$media-sm-plus-up}
+    margin-left: $padding
 
 .slider
   margin: 0
@@ -249,8 +282,7 @@ input[type='number']
   list-style: none
   width: 100%
   display: flex
-  position: absolute
-  left: 0
+  // position: absolute
   transition: all 1s ease
 
   &__button-wrapper
@@ -260,15 +292,94 @@ input[type='number']
     justify-content: space-between
     align-items: center
     position: absolute
-    padding-right: 7.6vw
+    padding-right: $padding-mobile
 
+    @media #{$media-sm-plus-up}
+      padding-right: $padding
+
+  &-container
+    position: relative
+    padding-left: $padding-mobile
+
+    @media #{$media-sm-plus-up}
+      padding-left: $padding
 
   &-wrapper
-    height: 48rem
-    width: calc(100vw - 7.6vw)
-    position: relative
+    padding-left: $padding-mobile
     overflow: hidden
-    margin: 0 auto
+    position: relative
+
+    @media #{$media-sm-plus-up}
+      padding-left: $padding
+
+  &-btn
+    width: 3.5rem
+    height: 3.5rem
+    border-radius: 50%
+    background: $color_gradient
+    display: flex
+    align-items: center
+    justify-content: center
+
+    &__wrap
+      align-items: center
+      border-radius: 50%
+      border: 1px solid $color_white
+      display: flex
+      height: 5.5rem
+      justify-content: center
+      left: .8rem
+      position: absolute
+      top: 15.2rem
+      width: 5.5rem
+      z-index: 2
+      transform: scale(1)
+      transition: .5s
+
+      @media #{$media-sm-plus-up}
+        left: calc(#{$padding} - 2.7rem)
+        top: 15.5rem
+
+      &:hover
+        box-shadow: inset 0px 0px 2rem rgba(255,255,255,.9)
+        transform: scale(1.2)
+
+      &_next
+        left: calc(100vw - 6.3rem)
+
+        @media #{$media-sm-plus-up}
+          left: calc(100vw - #{$padding} - 2.7rem)
+
+    &__img
+      width: 2rem
+
+  &__pagination
+    display: flex
+    justify-content: center
+    padding: 3rem $padding-mobile 5rem
+
+    @media #{$media-sm-plus-up}
+      padding: 10rem $padding 5rem
+
+.paginatecircle
+  background: $color_pagination
+  border: 1px solid $color_pagination
+  border-radius: 50%
+  width: 1rem
+  height: 1rem
+  cursor: pointer
+  display: inline-block
+  margin-right: 3rem
+  transition: .5s
+
+  &:hover
+    background: $color_accent
+    border: 1px solid $color_accent
+    transform: scale(1.1)
+
+  &_active
+    background: $color_white
+    border:  1px solid $color_accent
 
 .title
   &_news
@@ -277,20 +388,34 @@ input[type='number']
     line-height: 1em
 
 .card-main
-  min-width: 36rem
-  height: 36rem
-  margin-right: 1rem
+  min-width: 30.9rem
+  max-width: 30.9rem
+  margin-right: 1px
   display: inline-block
 
+  @media #{$media-sm-plus-up}
+    max-width: 36rem
+    min-width: 36rem
+
   &__img
-    height: 36rem
-    margin-bottom: 1.5rem
+    height: 31rem
+    margin-bottom: 2.1rem
+
+    @media #{$media-sm-plus-up}
+      margin-bottom: 1.8rem
+      height: 36rem
 
   &__title
     font-family: $font-family_accent, sans-serif
     font-size: 2rem
-    line-height: 1em
-    margin-bottom: 2rem
+    line-height: .9em
+
+    &-wrap
+      padding-right: 2rem
+      margin-bottom: 2rem
+
+      @media #{$media-sm-plus-up}
+        padding-right: 6rem
 
   &__subtitle
     font-weight: bold
@@ -303,17 +428,18 @@ input[type='number']
   display: flex
 
   &__date
-    margin-right: 2rem
+    margin-right: 3rem
 
   &__text
     font-family: $font-family_roboto, sans-serif
     font-size: 1.2rem
     line-height: 1.1em
     margin: 0
+    color: $color_card_footer
 
   &__looks
     display: flex
-    margin-right: 2rem
+    margin-right: 2.3rem
 
     &-img
       width: 2rem
@@ -328,3 +454,198 @@ input[type='number']
       width: 1.5rem
       height: 1.5rem
       margin-right: 1rem
+
+.main-btn
+  border-radius: 5rem
+  border: 1px solid $color_main
+  color: $color_main
+  display: block
+  font-size: 1.2rem
+  font-weight: bold
+  line-height: 1.3em
+  padding: 1rem 2.5rem
+  text-align: center
+  text-transform: uppercase
+  transition: background .6s
+  white-space: nowrap
+
+  &:hover
+    background: $color_main
+    color: $color_white
+
+  &_accent-outline
+    border: 1px solid $color_accent
+
+    &:hover
+      border: 1px solid $color_main
+
+  &_black
+    background: $color_main
+    color: $color_white
+
+    &:hover
+      background: $color_white
+      color: $color_main
+      border: 1px solid $color_main
+
+
+.social-btn
+  width: 4rem
+  height: 4rem
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 1rem
+  margin-right: 2px
+  margin-bottom: 0
+  border-radius: 50%
+
+  @media #{$media-md-up}
+    margin-bottom: 2px
+
+  &_fb
+    background: #3A559F
+
+  &_twitter
+    background: #55ACEE
+
+  &_telegram
+    background: #41B4E6
+
+  &__wrap
+    display: flex
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    padding: 0rem 4.3rem 5rem 0
+
+  &__item
+    display: flex
+    align-items: center
+    margin-right: 1.2rem
+
+  &__text
+    font-family: $font-family, sans-serif
+    font-size: 1.6rem
+    line-height: 1.3em
+    color: $color_main
+    margin: 0 0.5rem
+
+.updates
+  background: url("/img/icons/mail_white.svg") no-repeat calc(100% + 1.6rem) 3.5rem/ 5.6rem auto, $color_gradient
+  padding: 3rem 6.1rem 3rem 3.3rem
+
+  &_mobile-wrap
+    display: block
+
+    @media #{$media-sm-plus-up}
+      display: none
+
+  &_desk-wrap
+    display: none
+
+    @media #{$media-sm-plus-up}
+      display: block
+
+  &__title
+    font-family: $font-family_accent
+    font-size: 2rem
+    line-height: 1.3em
+    color: $color_white
+
+  &__subtitle
+    color: $color_white
+    font-family: $font-family_roboto
+    font-size: 1.2rem
+    line-height: 1.1em
+    margin: 1rem 0 1.3rem
+
+  &__form
+    position: relative
+
+  &__btn
+    position: absolute
+    right: 0
+    top: calc(50% - 1rem)
+    outline: none
+    border: none
+    background: none
+    text-transform: uppercase
+    cursor: pointer
+    font-family: $font-family_accent
+    font-size: 1.4rem
+    line-height: 1em
+    color: $color_white
+
+  &__input
+    width: 100%
+    outline: none
+    border: 0
+    border-bottom: 1px solid $color_white
+    padding: 1.4rem 0
+    position: relative
+    background: transparent
+    font-family: $font-family_roboto
+    font-size: 1.2rem
+    line-height: 1.1em
+    color: $color_white
+
+    &::placeholder
+      font-family: $font-family_roboto
+      font-size: 1.2rem
+      line-height: 1.1em
+      color: $color_white
+
+.line-with-dot
+  position: relative
+  content: ''
+  width: .5rem
+  height: .5rem
+  border-radius: 50%
+  border: 1px solid $color_main
+
+  &__wrapper
+    display: flex
+    width: 100%
+    align-items: center
+    justify-content: center
+    padding: 1rem 0 .5rem
+  
+  &__line
+    height: 1px
+    width: 8rem
+    background: $color_main
+    margin: 0 .5rem
+
+.user-card
+  display: flex
+  align-items: center
+  margin-bottom: 3rem
+  padding: .8rem 0 0 0
+
+  &__col
+  &__img
+    display: inline-block
+    width: 10rem
+    height: 10rem
+    border-radius: 50%
+    object-fit: cover
+    margin-right: 2.5rem
+
+  &__name
+    font-family: $font-family_lora
+    font-size: 2rem
+    line-height: 1.3em
+    color: $color_main
+
+  &__posts
+    font-family: $font-family
+    font-weight: bold
+    font-size: 1.2rem
+    line-height: 1.3em
+    text-transform: uppercase
+    color: $color_accent
+
+//helpers
+.object-position-top
+  object-position: top

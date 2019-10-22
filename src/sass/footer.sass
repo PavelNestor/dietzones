@@ -1,1 +1,134 @@
 .footer
+  padding: 3.7rem $padding-mobile 4.7rem
+  background: $color_main
+  color: $color_white
+  display: flex
+  justify-content: center
+  flex-direction: column
+
+  @media #{$media-sm-plus-up}
+    padding: 3.7rem $padding 4.7rem
+
+  &__logo
+    height: 2rem
+
+    @media #{$media-sm-plus-up}
+      height: 2.5rem
+
+    &-wrap
+      position: relative
+      margin: 0
+      display: flex
+      justify-content: center
+
+      &:after
+        content: ''
+        position: absolute
+        bottom: -2.5rem
+        left: 5rem
+        right: 5rem
+        height: 1rem
+        background: url('/img/icons/btn-active_white.svg') center bottom no-repeat
+
+      @media #{$media-sm-plus-up}
+        margin-left: 0
+
+  &__content
+    margin-top: 5rem
+    display: flex
+    flex-direction: column
+
+    @media #{$media-sm-plus-up}
+      flex-direction: row
+      margin-top: 5.5rem
+
+  &__col
+    &:nth-child(1)
+      flex-basis: 64.3%
+      padding: 0 0 5rem
+
+      @media #{$media-sm-plus-up}
+        padding: 0 4.2rem 0 0
+
+    &:nth-child(2)
+      flex-basis: 35%
+      align-items: center
+      padding: 0
+
+      @media #{$media-sm-plus-up}
+        padding: 0 0 0 6rem
+
+  &__text
+    font-family: $font-family, sans-serif
+    font-size: 1.4rem
+    line-height: 1.3em
+    color: $color_white
+    margin: 0
+
+  &__form
+    position: relative
+
+    &-title
+      font-family: $font-family_accent, sans-serif
+      font-size: 1.4rem
+      line-height: 1.8em
+      color: $color_white
+      text-align: start
+
+    &-btn
+      position: absolute
+      right: 0
+      top: calc(50% - 1rem)
+      outline: none
+      border: none
+      background: none
+      text-transform: uppercase
+      cursor: pointer
+      font-family: $font-family_accent
+      font-size: 1.4rem
+      line-height: 1em
+      color: $color_white
+
+    &-input
+      width: 100%
+      outline: none
+      border: 0
+      border-bottom: 1px solid $color_white
+      padding: 1.4rem 0
+      position: relative
+      background: $color_main
+
+      &::placeholder
+        font-family: $font-family_roboto
+        font-size: 1.2rem
+        line-height: 1em
+        color: $color_white
+
+  &-menu
+    display: flex
+    width: 100%
+    text-align: center
+    flex-direction: column
+
+    @media #{$media-sm-plus-up}
+      width: fit-content
+      flex-direction: row
+
+    &__wrap
+      display: flex
+      justify-content: center
+      padding: 3rem 0
+
+    &__item
+      margin-bottom: 2rem
+
+      @media #{$media-sm-plus-up}
+        margin-bottom: 0
+
+    &__link
+      color: $color_white
+      margin-right: 2rem
+
+  &__icons
+    margin: 0
+    padding: 0

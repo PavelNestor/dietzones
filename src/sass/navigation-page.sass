@@ -1,0 +1,57 @@
+.navbar-p
+  display: flex
+  align-items: center
+  justify-content: space-between
+  padding: 2.4rem 2rem
+  top: 0
+  left: 0
+  right: 0
+  background: $color_white
+  z-index: 100
+
+  @media #{$media-sm-plus-up}
+    padding: 1.7rem 4.6rem 1.7rem 3rem
+
+  &__burger
+    margin-right: 0
+    height: 1.4rem
+
+    @media #{$media-sm-plus-up}
+      margin-right: 2.5rem
+
+  &__search
+    margin-right: 0
+
+    @media #{$media-sm-plus-up}
+      margin-right: .5rem
+
+  &__left
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 100%
+
+    @media #{$media-sm-plus-up}
+      width: fit-content
+
+  &__logo-wrap
+    width: 100%
+    text-align: center
+    display: block
+
+  &__btn-signin
+    display: none
+
+    @media #{$media-md-up}
+      display: block
+  &__btn-signup
+    display: none
+
+    @media #{$media-md-up}
+      margin-right: 1rem
+      display: block
+
+  &__btn-wrap
+    display: flex
+    align-items: center
+    justify-content: space-between

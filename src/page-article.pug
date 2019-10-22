@@ -1,0 +1,19 @@
+extends partials/layout
+
+include partials/mixins
+
+block vars
+  - var title = "DietZones.com";
+
+block content
+  include partials/menu-mobile
+  include partials/navigation-page
+
+  section.blog
+    .blog__header
+      .blog__title-wrap
+        h2.blog__title Blog
+
+  include partials/block-article-content
+
+  include partials/block-page-hottest

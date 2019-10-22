@@ -1,0 +1,97 @@
+.card-slider
+  &__container
+    perspective: 10rem
+    margin-right: 1px
+
+    @media #{$media-sm-plus-up}
+      margin-right: 5rem
+
+  &__image
+    height: 30rem
+    transform: scale(1)
+    transition: 5s
+
+  &__content
+    width: 100vw
+    transition: 0.5s
+    position: relative
+    overflow: hidden
+
+    @media #{$media-sm-plus-up}
+      width: 37.7rem
+
+    &::after
+      position: absolute
+      content: ''
+      background: #2F3846
+      opacity: 0.4
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      transition: 0.5s
+
+    &:hover
+      .card-slider__image
+        transform: scale(1.3)
+
+      &::after
+        opacity: 0
+
+      .card-slider__description-content
+        padding: 5rem 0
+        transform: translateZ(15px)
+
+  &__description
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    display: flex
+    justify-content: center
+    align-items: center
+
+    &-content
+      position: relative
+      color: $color_white
+      font-family: $font-family_accent, sans-serif
+      font-size: 2rem
+      line-height: 1em
+      z-index: 1
+      transform: translateZ(1px)
+      transition: 5s
+
+      &:before
+        content: ''
+        position: absolute
+        top: -2rem
+        left: -0.5rem
+        right: -0.5rem
+        height: 1rem
+        background: url('/img/icons/btn-active_white.svg') center bottom no-repeat
+
+      &:after
+        content: ''
+        position: absolute
+        bottom: -1.7rem
+        left: -0.5rem
+        right: -0.5rem
+        height: 1rem
+        background: url('/img/icons/btn-active_white.svg') center bottom no-repeat
+
+  &__prev
+    top: 12.2rem
+
+  &__next
+    top: 12.2rem
+    left: calc(100vw - 7.2vw - 4.5rem)
+
+.block-slider
+  margin-bottom: 3rem
+
+  .slider-wrapper
+    padding: 2rem 0
+
+    @media #{$media-sm-plus-up}
+      padding-left: $padding

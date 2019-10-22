@@ -1,0 +1,237 @@
+// page BLOG
+.blog
+  &__title-wrap
+    position: relative
+    padding-top: 1rem
+
+    @media #{$media-sm-plus-up}
+      padding-top: 3.9rem
+
+    &::before
+      position: absolute
+      content: ''
+      border: 1px solid $color_accent
+      border-radius: 50%
+      width: 2rem
+      height: 2rem
+      top: calc( 50% - 1rem )
+      left: calc( #{ - $padding-mobile} / 2 - 1rem)
+      background: url('/img/icons/arrow_blue.svg') no-repeat center center / 60%
+
+      @media #{$media-sm-plus-up}
+        top: 50%
+        left: calc( #{ - $padding} / 2 - 2.1rem)
+        width: 3.3rem
+        height: 3.3rem
+
+  &__title
+    margin-bottom: 3rem
+
+    @media #{$media-sm-plus-up}
+      margin-bottom: 4rem
+
+  &__updates-mobile
+    display: block
+
+    @media #{$media-sm-plus-up}
+      display: none
+
+  &__header
+    padding: 0 $padding-mobile
+
+    @media #{$media-sm-plus-up}
+      padding: 0 $padding
+
+
+  &__content
+    padding: 5.2rem $padding-mobile 0
+    display: flex
+    flex-direction: column
+
+    @media #{$media-sm-plus-up}
+      padding: 5.2rem $padding 0
+      flex-direction: row
+
+  &__col
+
+    .hottest-card-big__wrap:last-of-type
+      margin-right: 0
+
+      @media #{$media-sm-plus-up}
+        margin-right: 5rem
+
+    &:nth-child(3)
+      .hottest-card-big__wrap
+        margin-right: 0
+
+  &__footer
+    display: flex
+    justify-content: center
+
+// page NEWS
+.news
+  display: flex
+  flex-direction: column
+
+  @media #{$media-sm-plus-up}
+    flex-direction: row
+
+  &__img
+    .cover
+      width: 100%
+      object-fit: cover
+      object-position: center
+      height: 50rem
+
+  &__wrap
+    padding: 0
+    @media #{$media-sm-plus-up}
+      padding: 0 0 0 $padding
+
+  &__col
+    &:nth-child(1)
+      flex-basis: 50rem
+
+    &:nth-child(2)
+      flex-basis: calc(100% - 50rem)
+      padding: 3rem $padding-mobile
+      background: $color_light
+
+      @media #{$media-sm-plus-up}
+        padding: 5rem $padding 5rem 5rem
+
+  &__updates-mobile
+    display: flex
+
+    @media #{$media-sm-plus-up}
+      display: none
+
+  &__desktop
+    display: none
+
+    @media #{$media-sm-plus-up}
+      display: block
+
+.tag
+  display: block
+  background: $color_light
+  padding: .6rem
+  margin: .5rem
+  text-transform: uppercase
+  color: #000
+  font-family: $font-family
+  font-size: 1.2rem
+  line-height: 1.3em
+  transition: .3s
+
+  &:hover
+    background: darken($color_light, 5%)
+
+  &_active
+    background: $color_accent
+    color: $color_white
+
+    &:hover
+      background: darken($color_accent, 5%)
+
+  &__wrap
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    width: 100%
+    justify-content: center
+    margin-bottom: 3rem
+
+    @media #{$media-sm-plus-up}
+      margin-bottom: 5rem
+
+// ARTICLE
+.article
+  &__header
+    padding: 0 $padding/2
+
+  &__content
+    display: flex
+    background: $color_white
+    z-index: 1
+    position: relative
+    margin: 0 $padding_mobile 0
+    flex-direction: column
+
+    @media #{$media-sm-plus-up}
+      flex-direction: row
+      margin: -15rem $padding 0
+
+  &__subtitle
+    font-family: $font-family_lora
+    font-weight: normal
+    font-size: 2rem
+    line-height: 1.3em
+    color: $color_main
+    margin-top: 5rem
+
+  &__line-wrap
+    padding: 2rem 0 0
+
+  &__text
+    font-family: $font-family
+    font-size: 1.6rem
+    line-height: 1.3em
+    color: $color_main
+    margin-bottom: 3rem
+
+  &__img-text
+    font-family: $font-family_lora
+    font-size: 2rem
+    line-height: 1.3em
+    color: $color_main
+    margin-left: 2.8rem
+    position: relative
+    margin-top: 2rem
+    margin-bottom: 3rem
+
+    &::before
+      position: absolute
+      content: ''
+      left: -2.8rem
+      top: 0
+      bottom: 0
+      width: 1px
+      background: $color_accent
+
+  &__col
+    &:nth-child(1)
+      padding: 5rem 0 0
+      flex-basis: 67%
+
+      @media #{$media-sm-plus-up}
+        padding: 4.9rem 2rem 5rem .4rem
+
+    &:nth-child(2)
+      display: none
+
+      @media #{$media-sm-plus-up}
+        padding: 5rem 0 0 3rem
+        flex-basis: 33%
+        display: block
+
+    &_content
+      padding-left: 0
+      margin-bottom: 8rem
+
+      @media #{$media-sm-plus-up}
+        padding-left: $padding
+
+  &__update
+    margin-bottom: 5rem
+
+  &__more
+    display: flex
+    justify-content: center
+    width: 100%
+
+    &_comments
+      margin: 0
+
+      &-big
+        margin-top: 2.8rem

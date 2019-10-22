@@ -3,63 +3,220 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-// (function() {
-//   var menuImg = document.getElementById("menu-image");
-//   var menuClose = document.getElementById("menu-close");
-//   var menuContent = document.getElementById("menu-content");
+(function() {
+  var menuOpen = $('#menu-open');
+  var menuOpenScroll = $('#menu-open-scroll');
+  var menuClose = $('#menu-close');
+  var menuContent = $('#menu-mobile');
 
-//   const onToogleMenu = () => {
-//     menuContent.classList.toggle("menu-show");
-//   };
+  const onToogleMenu = () => {
+    menuContent.classList.toggle('menu-mobile_active');
+  };
 
-//   menuImg.addEventListener("click", onToogleMenu);
-//   menuImg.addEventListener("touch", onToogleMenu);
-//   menuClose.addEventListener("click", onToogleMenu);
-// })();
+  menuOpen.addEventListener("click", onToogleMenu);
+  menuOpenScroll.addEventListener("click", onToogleMenu);
+  menuClose.addEventListener("click", onToogleMenu);
+})();
 
-{
+// main slider
+const handleSliderChange = () => {
   const carousel = $("[data-target='carousel']");
-  const leftButton = $("[data-action='slideLeft']");
+  if (carousel) {
+    const leftButton = $("[data-action='slideLeft']");
   const rightButton = $("[data-action='slideRight']");
   const card = carousel.querySelector("[data-target='card']");
+  const dots = $$('.paginatecircle');
+  const cardOffsetWidth = card.offsetWidth;
 
   const carouselWidth = carousel.offsetWidth;
   const cardStyle = card.currentStyle || window.getComputedStyle(card)
   const cardMarginRight = Number(cardStyle.marginRight.match(/\d+/g)[0]);
-
-  console.log('carouselWidth', carouselWidth);
-  console.log('cardMarginRight', cardMarginRight);
-  console.log('cardStyle', card.offsetWidth);
-  
-
   const cardCount = carousel.querySelectorAll("[data-target='card']").length;
-  console.log('cardCount', cardCount);
 
   let offset = 0;
-  const maxX = -((cardCount / 3) * carouselWidth + 
-                (cardMarginRight * (cardCount / 3)) - 
-                carouselWidth - cardMarginRight);
+  carousel.style.transform = `translateX(${offset}px)`;
+  const amountOnScreen = Math.floor(carouselWidth / cardOffsetWidth) < 1 ? 1 : Math.floor(carouselWidth / cardOffsetWidth);
+  const maxX = (cardCount - amountOnScreen) * cardOffsetWidth * -1;
 
-  console.log('maxX', maxX);
+
+  dots.forEach(dot => {
+    let slideIndex = dot.dataset.index;
+    
+    dot.addEventListener('click', () => {
+      offset = (cardOffsetWidth + cardMarginRight) * slideIndex * -1;
+      carousel.style.transform = `translateX(${offset}px)`;
+      dots.forEach(dot => dot.classList.remove('paginatecircle_active'));
+      dot.classList.add('paginatecircle_active');
+    });
+  });
 
   const prevSlide = () => {
-  console.log('offset', offset);
-
     if (offset < 0) {
-      offset += card.offsetWidth + cardMarginRight;
-      carousel.style.transform = `translateX(${card.offsetWidth}px)`;
-      }
+      offset += cardOffsetWidth + cardMarginRight;
+      carousel.style.transform = `translateX(${offset}px)`;
+    }
   };
 
   const nextSlide = () => {
-  console.log('offset', offset);
-
     if (offset >= maxX) {
-      offset -= card.offsetWidth + cardMarginRight;
-      carousel.style.transform = `translateX(${-card.offsetWidth}px)`;
+      offset -= cardOffsetWidth + cardMarginRight;
+      carousel.style.transform = `translateX(${offset}px)`;
     }
   };
 
   leftButton.addEventListener("click", prevSlide);
   rightButton.addEventListener("click", nextSlide);
-}
+  }
+};
+
+// block slider
+const handleBlockSliderChange = () => {
+  const carouselTwo = $("[data-target='block-carousel']");
+
+  if (carouselTwo) {
+    const leftButtonTwo = $("[data-action='block-carousel-prev']");
+    const rightButtonTwo = $("[data-action='block-carousel-next']");
+    const cardTwo = carouselTwo.querySelector("[data-target='card']");
+    const cardTwoOffsetWidth = cardTwo.offsetWidth;
+
+    const carouselTwoWidth = carouselTwo.offsetWidth;
+    const cardStyleTwo = cardTwo.currentStyle || window.getComputedStyle(cardTwo)
+    const cardTwoMarginRight = Number(cardStyleTwo.marginRight.match(/\d+/g)[0]);
+    const cardTwoCount = carouselTwo.querySelectorAll("[data-target='card']").length;
+
+    let offsetTwo = 0;
+    carouselTwo.style.transform = `translateX(${offsetTwo}px)`;
+    const amountOnScreenTwo = Math.floor(carouselTwoWidth / cardTwoOffsetWidth) < 1 ? 1 : Math.floor(carouselTwoWidth / cardTwoOffsetWidth);
+    const maxXTwo = (cardTwoCount - amountOnScreenTwo) * cardTwoOffsetWidth * -1;
+
+    const prevSlideTwo = () => {
+      if (offsetTwo < 0) {
+        offsetTwo += cardTwoOffsetWidth + cardTwoMarginRight;
+        carouselTwo.style.transform = `translateX(${offsetTwo}px)`;
+      }
+    };
+
+    const nextSlideTwo = () => {
+
+      if (offsetTwo >= maxXTwo) {
+        offsetTwo -= cardTwoOffsetWidth + cardTwoMarginRight;
+        carouselTwo.style.transform = `translateX(${offsetTwo}px)`;
+      }
+    };
+
+    leftButtonTwo.addEventListener("click", prevSlideTwo);
+    rightButtonTwo.addEventListener("click", nextSlideTwo);
+  }
+};
+
+//Navbar scrollBehavior
+let prevScrollpos = 0;
+
+const handleScrollBehavior = () => {
+  const navbar = $("#navbar");
+  let currentScrollPos = window.pageYOffset;
+
+  if (currentScrollPos > 200 && prevScrollpos > currentScrollPos) {
+    navbar.classList.add('navbar_active');
+  } else {
+    navbar.classList.remove('navbar_active');
+  }
+
+  prevScrollpos = currentScrollPos;
+};
+
+// card animation:
+// const cardWrap = $("[data-target='block-carousel']");
+// if (cardWrap) {
+//   (function() {
+//     // Init
+//     const cardWrap = $("[data-target='block-carousel']");
+//     const container = cardWrap.querySelectorAll("[data-target='card']"),
+//       inner = $$("[data-target='inner']");
+  
+//     // Mouse
+//     var mouse = {
+//       _x: 0,
+//       _y: 0,
+//       x: 0,
+//       y: 0,
+//       updatePosition: function(index, event) {
+//         var e = event || window.event;
+//         this.x = e.clientX - this._x;
+//         this.y = (e.clientY - this._y) * -1;
+//       },
+//       setOrigin: function(e) {
+//         this._x = e.offsetLeft + Math.floor(e.offsetWidth / 4);
+//         this._y = e.offsetTop + Math.floor(e.offsetHeight / 4);
+//       }
+//     };
+  
+//     // Track the mouse position relative to the center of the container.
+//     container.forEach(cont => mouse.setOrigin(cont));
+  
+//     //--------------------------------------------------
+  
+//     var counter = 0;
+//     var updateRate = 1;
+//     var isTimeToUpdate = function() {
+
+//       return counter++ || updateRate === 0;
+//     };
+  
+//     //--------------------------------------------------
+  
+//     var onMouseEnterHandler = function(index, event) {
+//       update(index, event);
+//     };
+  
+//     var onMouseLeaveHandler = function(index) {
+//       inner[index].style = "";
+//     };
+  
+//     var onMouseMoveHandler = function(index, event) {
+//       if (isTimeToUpdate()) {
+//         update(index, event);
+//       };
+//     };
+  
+//     //--------------------------------------------------
+  
+//     var updateTransformStyle = function(index, x, y) {
+//       var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)";
+//       inner[index].style.transform = style;
+//       inner[index].style.webkitTransform = style;
+//       inner[index].style.mozTransform = style;
+//       inner[index].style.msTransform = style;
+//       inner[index].style.oTransform = style;
+//     };
+  
+//     var update = function(index, event) {
+//       mouse.updatePosition(index, event);
+//       updateTransformStyle(index,
+//         (mouse.y / inner[index].offsetHeight/2).toFixed(2),
+//         (mouse.x / inner[index].offsetWidth/2).toFixed(2)
+//       );
+//     };
+  
+//     //--------------------------------------------------
+  
+//     container.forEach((cont, index) => {
+//       cont.onmouseenter = event => onMouseEnterHandler(index, event);
+//       cont.onmouseleave = () => onMouseLeaveHandler(index);
+//       cont.onmousemove = event => onMouseMoveHandler(index, event);
+//     });
+//   })();
+// }
+
+const ready = () => {
+  handleSliderChange();
+  handleBlockSliderChange();
+};
+
+document.addEventListener('DOMContentLoaded', ready);
+window.addEventListener('scroll', handleScrollBehavior);
+window.addEventListener('resize', handleSliderChange);
+window.addEventListener('resize', handleBlockSliderChange);
+
+// animation
+AOS.init();
