@@ -1,0 +1,57 @@
+include mixins
+
+-
+  var comments = [
+    {
+      user_img: '/img/page/user1',
+      user_name: 'Deborah N. Rodriguez',
+      date: '14:51 20.09.2019',
+      text: 'Right now, the only thing we want to be shopping is Outdoor Voices workout clothes. The clothes are the perfect mix of on-trend and timeless, and they can be worn everywhere from the gym to brunch. Basically, we\'d like our entire wardrobe to consist of Outdoor Voices, and if you feel the same, keep reading to shop our picks.',
+      like: '+25',
+    },
+    {
+      user_img: '/img/page/user2',
+      user_name: 'Martha S. Emerson',
+      date: '14:51 20.09.2019',
+      text: 'Right now, the only thing we want to be shopping is Outdoor Voices workout clothes. The clothes are the perfect mix of on-trend and timeless, and they can be worn everywhere from the gym to brunch. Basically, we\'d like our entire wardrobe to consist of Outdoor Voices, and if you feel the same, keep reading to shop our picks.',
+      like: '+17',
+    },
+    {
+      user_img: '/img/page/user3',
+      user_name: 'Deborah N. Rodriguez',
+      date: '14:51 20.09.2019',
+      text: 'Right now, the only thing we want to be shopping is Outdoor Voices workout clothes. The clothes are the perfect mix of on-trend and timeless, and they can be worn everywhere from the gym to brunch. Basically, we\'d like our entire wardrobe to consist of Outdoor Voices, and if you feel the same, keep reading to shop our picks.',
+      like: '-35',
+    },
+    {
+      user_img: '/img/page/user4',
+      user_name: 'Martha S. Emerson',
+      date: '14:51 20.09.2019',
+      text: 'Right now, the only thing we want to be shopping is Outdoor Voices workout clothes. The clothes are the perfect mix of on-trend and timeless, and they can be worn everywhere from the gym to brunch. Basically, we\'d like our entire wardrobe to consist of Outdoor Voices, and if you feel the same, keep reading to shop our picks.',
+      like: '+25',
+    },
+  ];
+
+section.comments
+  .article__more.article__more_comments
+    a(href="#")
+      img.editors__footer-more(src='/img/icons/comments.svg', alt='Show comments')
+
+  .comments__title
+    h2 Comments
+
+  .comments__wrap
+    each comment in comments
+      +comment(comment)
+
+  .article__more.article__more_comments-big
+    a(href="#")
+      img.editors__footer-more(src='/img/icons/comments_more.svg', alt='Show comments')
+
+  h4 Add comment
+
+  .comments__form
+    form.menu-mobile__form
+      input.menu-mobile__input(type="text", placeholder='Enter your message')
+      button.menu-mobile__btn(type="submit", value='ok') ok
+

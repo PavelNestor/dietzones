@@ -27,7 +27,7 @@ mixin card-footer(date, looks, comments)
       img.card-footer__looks-img(src="/img/icons/looks.svg", alt="looks")
       p.card-footer__text= looks
     .card-footer__comments
-      img.card-footer__comments-img(src="/img/icons/comments.svg", alt="comments")
+      img.card-footer__comments-img(src="/img/icons/comments-sm.svg", alt="comments")
       p.card-footer__text= comments
 
 mixin slider-btn-prev(prev)
@@ -41,7 +41,7 @@ mixin slider-btn-next(next)
       img.slider-btn__img(src="/img/icons/arrow-next.svg", alt='slide left')
 
 mixin card-editors(options)
-  .editors-card
+  .editors-card(data-aos="fade-up", data-aos-duration="1000")
     .editors-card__image-wrap
       +pictureJpg(options.path, options.alt)(class='object-position-top')
     .editors-card__content
@@ -50,7 +50,7 @@ mixin card-editors(options)
       +card-footer(options.date, options.looks, options.comments)
 
 mixin card-editors-big(options)
-  .editors-card.editors-card-big
+  .editors-card.editors-card-big(data-aos="fade-up", data-aos-duration="1000")
     .editors-card__image-wrap.editors-card-big__image-wrap
       .editors-card-big__image-text
         = options.imgText1
@@ -64,7 +64,7 @@ mixin card-editors-big(options)
       +card-footer(options.date, options.looks, options.comments)
 
 mixin card-hottest-big(options)
-  .hottest-card-big__wrap
+  .hottest-card-big__wrap(data-aos="fade-up", data-aos-duration="1000")
     .hottest-card-big
       .editors-card__image-wrap.hottest-card-big__image-wrap(class= options.class)
         .hottest-card-big__image-text
@@ -81,7 +81,7 @@ mixin card-hottest-big(options)
       +card-footer(options.date, options.looks, options.comments)
 
 mixin card-know-big(options)
-  .know-slide__wrap
+  .know-slide__wrap(data-aos="fade-up", data-aos-duration="1000")
     .hottest-card-big
       .editors-card__image-wrap.hottest-card-big__image-wrap.know-slide__image-wrap(class= options.class)
         .know-slide__image-text-wrap
@@ -104,7 +104,7 @@ mixin block-slider-card (options)
         a(href="page-article.html").card-slider__description-content= options.description
 
 mixin card-know(options)
-  .know-card
+  .know-card(data-aos="fade-up", data-aos-duration="1000")
     .know-card__image-wrap
       +pictureJpg(options.path, options.alt)(class='object-position-top')
     .know-card__content
@@ -113,7 +113,7 @@ mixin card-know(options)
       +card-footer(options.date, options.looks, options.comments)
 
 mixin card-know-events(options)
-  .know-slide__wrap
+  .know-slide__wrap(data-aos="fade-up", data-aos-duration="1000")
     .hottest-card-big
       .editors-card__image-wrap.hottest-card-big__image-wrap.know-slide__image-wrap(class= options.class)
         .know-slide__image-text-wrap
@@ -155,3 +155,23 @@ mixin line-with-dot()
     .line-with-dot__line
     .line-with-dot
     .line-with-dot__line
+
+mixin comment(options)
+  .user-comment
+    .user-comment__col
+      .user-comment__img
+        +picturePng(options.user_img)
+
+    .user-comment__col
+      .user-comment__header
+        .user-comment__title-wrap
+          .user-comment__name= options.user_name
+          .user-comment__date= options.date
+        .user-comment__reply-wrap
+          .user-comment__reply-text Relpy
+          button.user-comment__reply-btn +
+          button.user-comment__reply-btn -
+          .user-comment__reply-liks= options.like
+
+      .user-comment__text= options.text
+
